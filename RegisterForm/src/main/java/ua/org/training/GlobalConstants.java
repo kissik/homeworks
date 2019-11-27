@@ -25,10 +25,11 @@ public interface GlobalConstants {
     String VIEW_NICK_NAME = "Nick Name: ";
 
     String STRING_INPUT_COMMENT = "Input Comment:";
-    String PATTERN_INPUT_ANY = ".*|[ ]?$";
+    String PATTERN_INPUT_ANY = "[^\\r\\n]+";//[\\r\\n]+";//[^\\S]+";
     String VIEW_COMMENT = "Comment: ";
 
     String STRING_INPUT_HOME_PHONE = "Input Home Phone:";
+    String STRING_PHONE_SAMPLE = "(in format '+38(044)222-33-44')";
     String VIEW_HOME_PHONE = "Home Phone: ";
     String STRING_INPUT_CELLULAR_PHONE = "Input Cellular Phone:";
     String VIEW_CELLULAR_PHONE = "Cellular Phone: ";
