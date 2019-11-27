@@ -7,7 +7,7 @@ import javafx.util.Pair;
  * Created by @kissik on 27 NOV 2019
  */
 public class Model {
-    private String name, middleName, lastName;
+    private String name, middleName, lastName, nickName, comment;
 
     private void initModel(){
     }
@@ -22,6 +22,22 @@ public class Model {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getNickName(){
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public String getComment(){
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     public String getLastName() {

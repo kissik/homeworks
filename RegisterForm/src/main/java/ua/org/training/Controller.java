@@ -2,6 +2,8 @@ package ua.org.training;
 
 import java.util.Scanner;
 
+import static ua.org.training.GlobalConstants.*;
+
 /**
  * Created by @kissik on 27 NOV 2019
  */
@@ -17,13 +19,27 @@ public class Controller {
 
     public void processUser(){
         Scanner sc = new Scanner(System.in);
-        view.printMessage(GlobalConstants.STRING_HELLO_STRING + GlobalConstants.BREAK_LINE);
-        model.setLastName(inputStringValueWithScanner(sc, GlobalConstants.STRING_INPUT_LAST_NAME, GlobalConstants.PATTERN_INPUT_LAST_NAME));
-        model.setName(inputStringValueWithScanner(sc, GlobalConstants.STRING_INPUT_NAME, GlobalConstants.PATTERN_INPUT_NAME));
-        model.setMiddleName(inputStringValueWithScanner(sc, GlobalConstants.STRING_INPUT_MIDDLE_NAME, GlobalConstants.PATTERN_INPUT_MIDDLE_NAME));
-        
-        view.printMessage(GlobalConstants.FULL_NAME + model.getFullName() + GlobalConstants.BREAK_LINE);
-        view.printMessage(GlobalConstants.BREAK_LINE + GlobalConstants.THANK_YOU_STRING + GlobalConstants.BREAK_LINE);
+        view.printMessage(STRING_HELLO_STRING + BREAK_LINE);
+        model.setLastName(inputStringValueWithScanner(sc,
+                STRING_INPUT_LAST_NAME,
+                PATTERN_INPUT_LAST_NAME));
+        model.setName(inputStringValueWithScanner(sc,
+                STRING_INPUT_NAME,
+                PATTERN_INPUT_NAME));
+        model.setMiddleName(inputStringValueWithScanner(sc,
+                STRING_INPUT_MIDDLE_NAME,
+                PATTERN_INPUT_MIDDLE_NAME));
+
+        model.setNickName(inputStringValueWithScanner(sc,
+                STRING_INPUT_NICK_NAME,
+                PATTERN_INPUT_NICK_NAME));
+
+        model.setComment(inputStringValueWithScanner(sc,
+                STRING_INPUT_COMMENT,
+                PATTERN_INPUT_COMMENT));
+
+        view.printMessage(FULL_NAME + model.getFullName() + BREAK_LINE);
+        view.printMessage(BREAK_LINE + THANK_YOU_STRING + BREAK_LINE);
         view.printMessage(getForm());
 
     }
@@ -31,7 +47,7 @@ public class Controller {
     public String inputStringValueWithScanner(Scanner sc, String msg, String pattern) {
         view.printMessage(msg);
         while( ! sc.hasNext(pattern)) {
-            view.printMessage(GlobalConstants.WRONG_INPUT_INT_DATA + msg);
+            view.printMessage(WRONG_INPUT_INT_DATA + msg);
             sc.next();
         }
         return sc.next();
@@ -39,18 +55,20 @@ public class Controller {
 
     public String getForm(){
         StringBuffer form = new StringBuffer();
-        appendViewModelField(form, GlobalConstants.VIEW_LAST_NAME, model.getLastName());
-        appendViewModelField(form, GlobalConstants.VIEW_NAME, model.getName());
-        appendViewModelField(form, GlobalConstants.VIEW_MIDDLE_NAME, model.getMiddleName());
+        appendViewModelField(form, VIEW_LAST_NAME, model.getLastName());
+        appendViewModelField(form, VIEW_NAME, model.getName());
+        appendViewModelField(form, VIEW_MIDDLE_NAME, model.getMiddleName());
+        appendViewModelField(form, VIEW_NICK_NAME, model.getNickName());
+        appendViewModelField(form, VIEW_COMMENT, model.getComment());
 
         return form.toString();
     }
 
     private void appendViewModelField(StringBuffer form, String viewLastName, String lastName) {
         form.append(viewLastName)
-                .append(GlobalConstants.BREAK_LINE + GlobalConstants.TAB_SYMBOLS)
+                .append(BREAK_LINE + TAB_SYMBOLS)
                 .append(lastName)
-                .append(GlobalConstants.BREAK_LINE);
+                .append(BREAK_LINE);
     }
 
 }
