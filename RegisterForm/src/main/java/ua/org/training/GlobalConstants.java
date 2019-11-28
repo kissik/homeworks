@@ -5,59 +5,59 @@ package ua.org.training;
  */
 public interface GlobalConstants {
 
-    String STRING_HELLO_STRING = "Hey! This is a Registration Form";
-    String WRONG_INPUT_INT_DATA = "Wrong input! Repeat please!";
+    String STRING_HELLO_STRING = "string.hello.string";
+    String WRONG_INPUT_INT_DATA = "string.wrong.data.string";
+    String FULL_NAME = "string.full.name";
+    String THANK_YOU_STRING = "string.thank.you";
 
-    String STRING_INPUT_LAST_NAME = "Input Last Name:";
-    String PATTERN_INPUT_LAST_NAME = "[A-Z]{1}[a-z]*";
-    String VIEW_LAST_NAME = "Last Name: ";
+    String STRING_INPUT_LAST_NAME = "input.model.last.name";
+    String STRING_INPUT_NAME = "input.model.name";
+    String STRING_INPUT_MIDDLE_NAME = "input.model.middle.name";
+    String STRING_INPUT_NICK_NAME = "input.model.nick.name";
+    String STRING_INPUT_COMMENT = "input.model.comment";
+    String STRING_INPUT_HOME_PHONE = "input.model.home.phone";
+    String STRING_PHONE_SAMPLE = "input.model.phone.sample";
+    String STRING_INPUT_CELLULAR_PHONE = "input.model.cellular.phone";
+    String STRING_INPUT_CELLULAR_PHONE_TWO = "input.model.cellular.phone.two";
+    String STRING_INPUT_CELLULAR_PHONE_TWO_QUESTION = "input.model.cellular.phone.question";
+    String STRING_INPUT_EMAIL = "input.model.email";
+    String STRING_INPUT_GROUP = "input.model.group";
 
-    String STRING_INPUT_NAME = "Input Name:";
-    String PATTERN_INPUT_NAME = "[A-Z]{1}[a-z]*";
-    String VIEW_NAME = "Name: ";
+    String STRING_INPUT_ADDRESS_INDEX = "input.address.index";
+    String STRING_INPUT_ADDRESS_CITY = "input.address.city";
+    String STRING_INPUT_ADDRESS_STREET = "input.address.street";
+    String STRING_INPUT_ADDRESS_HOUSE = "input.address.house";
+    String STRING_INPUT_ADDRESS_APARTMENT = "input.address.apartment";
 
-    String STRING_INPUT_MIDDLE_NAME = "Input Middle Name:";
-    String PATTERN_INPUT_MIDDLE_NAME = "[A-Z]{1}[a-z]*";
-    String VIEW_MIDDLE_NAME = "Middle Name: ";
+    String PATTERN_INPUT_NAME = "pattern.model.name";
+    String PATTERN_INPUT_NICK_NAME = "pattern.model.nick.name";
+    String PATTERN_INPUT_ANY = "pattern.model.any";
+    String PATTERN_INPUT_PHONE = "pattern.model.phone";
+    String PATTERN_INPUT_EMAIL = "pattern.model.email";
+    String PATTERN_INPUT_GROUP = "pattern.model.group";
 
-    String STRING_INPUT_NICK_NAME = "Input Nick Name:";
-    String PATTERN_INPUT_NICK_NAME = "[a-z]*";
-    String VIEW_NICK_NAME = "Nick Name: ";
+    String PATTERN_INPUT_ADDRESS_INDEX = "pattern.address.index";
+    String PATTERN_INPUT_ADDRESS_CITY = "pattern.address.city";
+    String PATTERN_INPUT_ADDRESS_STREET = "pattern.address.street";
+    String PATTERN_INPUT_ADDRESS_HOUSE = "pattern.address.house";
+    String PATTERN_INPUT_ADDRESS_APARTMENT = "pattern.address.apartment";
 
-    String STRING_INPUT_COMMENT = "Input Comment:";
-    String PATTERN_INPUT_ANY = "[^\\r\\n]+";//[\\r\\n]+";//[^\\S]+";
-    String VIEW_COMMENT = "Comment: ";
+    String VIEW_LAST_NAME = "view.model.last.name";
+    String VIEW_NAME = "view.model.name";
+    String VIEW_MIDDLE_NAME = "view.model.middle.name";
+    String VIEW_NICK_NAME = "view.model.nick.name";
+    String VIEW_COMMENT = "view.model.comment";
+    String VIEW_HOME_PHONE = "view.model.home.phone";
+    String VIEW_CELLULAR_PHONE = "view.model.cellular.phone";
+    String VIEW_CELLULAR_PHONE_TWO = "view.model.cellular.phone.second";
+    String VIEW_EMAIL = "view.model.email";
+    String VIEW_GROUP = "view.model.group";
+    String VIEW_ADDRESS = "view.model.address";
 
-    String STRING_INPUT_HOME_PHONE = "Input Home Phone:";
-    String STRING_PHONE_SAMPLE = "(in format '+38(044)222-33-44')";
-    String VIEW_HOME_PHONE = "Home Phone: ";
-    String STRING_INPUT_CELLULAR_PHONE = "Input Cellular Phone:";
-    String VIEW_CELLULAR_PHONE = "Cellular Phone: ";
-    String STRING_INPUT_CELLULAR_PHONE_TWO = "Input Cellular Phone (second):";
-    String STRING_INPUT_CELLULAR_PHONE_TWO_QUESTION = "Do you want to enter second cellular phone number? (y/Y - yes):";
-    String VIEW_CELLULAR_PHONE_TWO = "Cellular Phone (second): ";
-    String PATTERN_INPUT_PHONE = "\\+\\d{2}\\(\\d{3}\\)\\d{3}-\\d{2}-\\d{2}";
-
-    String STRING_INPUT_EMAIL = "Input E-mail:";
-    String PATTERN_INPUT_EMAIL = "^([a-z0-9_-]+\\.)*[a-z0-9_-]+@[a-z0-9_-]+(\\.[a-z0-9_-]+)*\\.[a-z]{2,6}$";
-    String VIEW_EMAIL = "E-mail";
-
-    String STRING_INPUT_GROUP = "Input Number of Group: \n" +
-            "1. FAMILY\n" +
-            "2. FRIENDS\n"  +
-            "3. WORK\n" +
-            "4. TRAINING\n" +
-            "5. FRIDAY\n" +
-            "6. UNIVERSITY\n";
-    String PATTERN_INPUT_GROUP = "[1-6]{1}";
-    String VIEW_GROUP = "Group: ";
-
-    String FULL_NAME = "Hi! ";
-
-    String THANK_YOU_STRING = "Thank you for choosing our service! \nBest wishes!";
     String BREAK_LINE = "\n";
     String TAB_SYMBOLS = "\t";
     String DEFAULT_STRING = "none";
+    String DELIMITER_SYMBOL = " ";
 
     enum GroupName {
         FAMILY, FRIENDS, WORK, TRAINING, FRIDAY, UNIVERSITY
