@@ -45,7 +45,7 @@ public class Controller {
                 view.getString(STRING_INPUT_COMMENT)));
         model.setViewComment(view.getString(VIEW_COMMENT));
         model.setGroup(mapGroup(inputStringValueWithScanner(sc,
-                view.getString(STRING_INPUT_GROUP),
+                view.getString(STRING_INPUT_GROUP) + Group.getString(),
                 view.getString(PATTERN_INPUT_GROUP))));
         model.setViewGroup(view.getString(VIEW_GROUP));
         model.setHomePhone(inputStringValueWithScanner(sc,

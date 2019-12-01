@@ -16,4 +16,12 @@ public enum Group {
     public int number(){
         return this.number;
     }
+
+    public static String getString(){
+        StringBuffer form = new StringBuffer();
+        for(Group g : Group.values()){
+            form.append(g.number()).append(". ").append(g.toString()).append("\n");
+        }
+        return form.toString();
+    }
 }
