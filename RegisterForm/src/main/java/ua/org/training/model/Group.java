@@ -9,7 +9,7 @@ public enum Group {
     UNIVERSITY  (6);
 
     private int number;
-    private Grouснp(int number){
+    private Group(int number){
         this.number = number;
     }
 

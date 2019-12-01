@@ -53,6 +53,8 @@ public interface GlobalConstants {
     String VIEW_EMAIL = "view.model.email";
     String VIEW_GROUP = "view.model.group";
     String VIEW_ADDRESS = "view.model.address";
+    String VIEW_CREATE_DATE = "view.model.create.date";
+    String VIEW_UPDATE_DATE = "view.model.update.date";
 
     String BREAK_LINE = "\n";
     String TAB_SYMBOLS = "\t";

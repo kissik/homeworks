@@ -1,6 +1,9 @@
 package ua.org.training.model;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+
 import javafx.util.Pair;
 import ua.org.training.GlobalConstants;
 
@@ -19,7 +22,24 @@ public class Model {
     private String cellularPhone;
     private String cellularPhoneTwo;
     private String email;
-    private Group Group;
+    private Group group;
+
+    public String getCreateDate() {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        return formatter.format(createDate);
+    }
+
+    public String getUpdateDate() {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        return formatter.format(updateDate);
+    }
+
+    public void setUpdateDate() {
+        this.updateDate = new Date();
+    }
+
+    private Date createDate;
+    private Date updateDate;
 
     private Address address;
     private ArrayList<Pair<String, String>> map;
@@ -53,10 +73,17 @@ public class Model {
     public void setViewAddress(String viewAddress) {
         map.add(new Pair("address",viewAddress));
     }
+    public void setViewCreateDate(String viewCreateDate) {
+        map.add(new Pair("createDate",viewCreateDate));
+    }
+    public void setViewUpdateDate(String viewUpdateDate) {
+        map.add(new Pair("updateDate",viewUpdateDate));
+    }
 
     private void initModel(){
         map = new ArrayList<>();
         cellularPhoneTwo = null;
+        createDate = new Date();
     }
 
     public Address getAddress() {
@@ -111,10 +138,10 @@ public class Model {
         this.middleName = middleName;
     }
 
-    public String getGroup() {return Group.toString();}
+    public String getGroup() {return group.toString();}
 
-    public void setGroup(Group Group) {
-        this.Group = Group;
+    public void setGroup(Group group) {
+        this.group = group;
     }
 
     public String getHomePhone() {
@@ -167,6 +194,8 @@ public class Model {
         appendViewModelField(form, getViewString("cellularPhoneTwo"), getCellularPhoneTwo());
         appendViewModelField(form, getViewString("email"), getEmail());
         appendViewModelField(form, getViewString("address"), getAddress().toString());
+        appendViewModelField(form, getViewString("createDate"), getCreateDate());
+        appendViewModelField(form, getViewString("updateDate"), getUpdateDate());
         return form.toString();
     }
     String getViewString(String key){

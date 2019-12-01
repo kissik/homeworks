@@ -67,6 +67,9 @@ public class Controller {
         model.setViewEmail(view.getString(VIEW_EMAIL));
         model.setAddress(readAddress(sc));
         model.setViewAddress(view.getString(VIEW_ADDRESS));
+        model.setViewCreateDate(view.getString(VIEW_CREATE_DATE));
+        model.setViewUpdateDate(view.getString(VIEW_UPDATE_DATE));
+        model.setUpdateDate();
         view.printMessage(view.getString(FULL_NAME) + model.getFullName() + BREAK_LINE);
         view.printMessage(model.toString());
         view.printMessage(BREAK_LINE + view.getString(THANK_YOU_STRING) + BREAK_LINE);
