@@ -59,8 +59,4 @@ public interface GlobalConstants {
     String DEFAULT_STRING = "none";
     String DELIMITER_SYMBOL = " ";
 
-    enum GroupName {
-        FAMILY, FRIENDS, WORK, TRAINING, FRIDAY, UNIVERSITY
-    }
-
 }

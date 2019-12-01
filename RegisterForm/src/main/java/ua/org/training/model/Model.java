@@ -19,7 +19,7 @@ public class Model {
     private String cellularPhone;
     private String cellularPhoneTwo;
     private String email;
-    private GroupName groupName;
+    private Group Group;
 
     private Address address;
     private ArrayList<Pair<String, String>> map;
@@ -111,10 +111,10 @@ public class Model {
         this.middleName = middleName;
     }
 
-    public String getGroupName() {return groupName.toString();}
+    public String getGroup() {return Group.toString();}
 
-    public void setGroupName(GroupName groupName) {
-        this.groupName = groupName;
+    public void setGroup(Group Group) {
+        this.Group = Group;
     }
 
     public String getHomePhone() {
@@ -161,7 +161,7 @@ public class Model {
         appendViewModelField(form, getViewString("middleName"), getMiddleName());
         appendViewModelField(form, getViewString("nickName"), getNickName());
         appendViewModelField(form, getViewString("comment"), getComment());
-        appendViewModelField(form, getViewString("group"), getGroupName());
+        appendViewModelField(form, getViewString("group"), getGroup());
         appendViewModelField(form, getViewString("homePhone"), getHomePhone());
         appendViewModelField(form, getViewString("cellularPhone"), getCellularPhone());
         appendViewModelField(form, getViewString("cellularPhoneTwo"), getCellularPhoneTwo());

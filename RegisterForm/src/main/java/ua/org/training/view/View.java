@@ -1,5 +1,6 @@
 package ua.org.training.view;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -18,5 +19,9 @@ public class View {
 
     public void printMessage(String message){
         System.out.println(message);
+    }
+
+    public String getString(String latin1) {
+        return new String(bundle.getString(latin1).getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
     }
 }
