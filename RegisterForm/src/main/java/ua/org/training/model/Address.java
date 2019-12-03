@@ -52,7 +52,7 @@ public class Address {
 
     @Override
     public String toString(){
-        StringBuffer form = new StringBuffer();
+        StringBuffer form = new StringBuffer(GlobalConstants.BUFFER_SIZE);
         form.append(GlobalConstants.DELIMITER_SYMBOL).append(getIndex())
                 .append(GlobalConstants.DELIMITER_SYMBOL).append(getCity())
                 .append(GlobalConstants.DELIMITER_SYMBOL).append(getStreet())

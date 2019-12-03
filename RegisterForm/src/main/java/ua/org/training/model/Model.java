@@ -182,7 +182,7 @@ public class Model {
 
     @Override
     public String toString(){
-        StringBuffer form = new StringBuffer();
+        StringBuffer form = new StringBuffer(BUFFER_SIZE);
         appendViewModelField(form, getViewString("lastName"), getLastName());
         appendViewModelField(form, getViewString("name"), getName());
         appendViewModelField(form, getViewString("middleName"), getMiddleName());

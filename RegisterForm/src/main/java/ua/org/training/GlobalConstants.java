@@ -60,5 +60,6 @@ public interface GlobalConstants {
     String TAB_SYMBOLS = "\t";
     String DEFAULT_STRING = "none";
     String DELIMITER_SYMBOL = " ";
+    int BUFFER_SIZE = 400;
 
 }
