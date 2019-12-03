@@ -3,6 +3,7 @@ package ua.org.training.model;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.function.Function;
 
 import javafx.util.Pair;
 import ua.org.training.GlobalConstants;
@@ -23,24 +24,8 @@ public class Model {
     private String cellularPhoneTwo;
     private String email;
     private Group group;
-
-    public String getCreateDate() {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-        return formatter.format(createDate);
-    }
-
-    public String getUpdateDate() {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-        return formatter.format(updateDate);
-    }
-
-    public void setUpdateDate() {
-        this.updateDate = new Date();
-    }
-
     private Date createDate;
     private Date updateDate;
-
     private Address address;
     private ArrayList<Pair<String, String>> map;
 
@@ -90,8 +75,9 @@ public class Model {
         return address;
     }
 
-    public void setAddress(Address address) {
+    public Model setAddress(Address address) {
         this.address = address;
+        return this;
     }
 
     public Model(){
@@ -102,62 +88,70 @@ public class Model {
         return name;
     }
 
-    public void setName(String name) {
+    public Model setName(String name) {
         this.name = name;
+        return this;
     }
 
     public String getNickName(){
         return nickName;
     }
 
-    public void setNickName(String nickName) {
+    public Model setNickName(String nickName) {
         this.nickName = nickName;
+        return this;
     }
 
     public String getComment(){
         return comment;
     }
 
-    public void setComment(String comment) {
+    public Model setComment(String comment) {
         this.comment = comment;
+        return this;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public Model setLastName(String lastName) {
         this.lastName = lastName;
+        return this;
     }
 
     public String getMiddleName() {
         return middleName;
     }
 
-    public void setMiddleName(String middleName) {
+    public Model setMiddleName(String middleName) {
         this.middleName = middleName;
+        return this;
     }
 
     public String getGroup() {return group.toString();}
 
-    public void setGroup(Group group) {
+    public Model setGroup(Group group) {
         this.group = group;
+        return this;
     }
 
     public String getHomePhone() {
         return homePhone;
     }
 
-    public void setHomePhone(String homePhone) {
+    public Model setHomePhone(String homePhone) {
         this.homePhone = homePhone;
+        return this;
     }
 
     public String getCellularPhone() {
         return cellularPhone;
     }
 
-    public void setCellularPhone(String cellularPhone) {
+    public Model setCellularPhone(String cellularPhone) {
         this.cellularPhone = cellularPhone;
+        return this;
     }
 
     public String getCellularPhoneTwo() {
@@ -166,18 +160,41 @@ public class Model {
         return GlobalConstants.DEFAULT_STRING;
     }
 
-    public void setCellularPhoneTwo(String cellularPhoneTwo) {
+    public Model setCellularPhoneTwo(String cellularPhoneTwo) {
         this.cellularPhoneTwo = cellularPhoneTwo;
+        return this;
     }
 
     public String getEmail() { return email; }
 
-    public void setEmail(String email) { this.email = email; }
+    public Model setEmail(String email) {
+        this.email = email;
+        return this;
+    }
 
     public String getFullName(){
         StringBuffer fullName = new StringBuffer(getLastName());
         fullName.append(" ").append(getName().substring(0,1)).append(".");
         return fullName.toString();
+    }
+
+    public Model setFormField(String formFieldValue, Function<String, Model> func){
+        return func.apply(formFieldValue);
+    }
+
+    public String getCreateDate() {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        return formatter.format(createDate);
+    }
+
+    public String getUpdateDate() {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        return formatter.format(updateDate);
+    }
+
+    public Model setUpdateDate() {
+        this.updateDate = new Date();
+        return this;
     }
 
     @Override
@@ -198,6 +215,7 @@ public class Model {
         appendViewModelField(form, getViewString("updateDate"), getUpdateDate());
         return form.toString();
     }
+
     String getViewString(String key){
         for(Pair<String, String> pair : map){
             if (pair.getKey()==key) return pair.getValue();

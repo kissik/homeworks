@@ -16,7 +16,6 @@ public interface GlobalConstants {
     String STRING_INPUT_NICK_NAME = "input.model.nick.name";
     String STRING_INPUT_COMMENT = "input.model.comment";
     String STRING_INPUT_HOME_PHONE = "input.model.home.phone";
-    String STRING_PHONE_SAMPLE = "input.model.phone.sample";
     String STRING_INPUT_CELLULAR_PHONE = "input.model.cellular.phone";
     String STRING_INPUT_CELLULAR_PHONE_TWO = "input.model.cellular.phone.two";
     String STRING_INPUT_CELLULAR_PHONE_TWO_QUESTION = "input.model.cellular.phone.question";

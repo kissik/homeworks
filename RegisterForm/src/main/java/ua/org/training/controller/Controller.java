@@ -1,11 +1,14 @@
 package ua.org.training.controller;
 
+import javafx.util.Pair;
 import ua.org.training.model.Address;
 import ua.org.training.model.Group;
 import ua.org.training.view.View;
 import ua.org.training.model.Model;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.function.Function;
 
 import static ua.org.training.GlobalConstants.*;
 
@@ -17,56 +20,67 @@ public class Controller {
     private Model model;
     private View view;
 
+    private ArrayList<Pair<String, String>> map;
+
+    private void initModel(){
+        map = new ArrayList<>();
+        map.add(new Pair(STRING_INPUT_LAST_NAME,PATTERN_INPUT_NAME));
+        map.add(new Pair(STRING_INPUT_NAME, PATTERN_INPUT_NAME));
+        map.add(new Pair(STRING_INPUT_MIDDLE_NAME, PATTERN_INPUT_NAME));
+        map.add(new Pair(STRING_INPUT_NICK_NAME, PATTERN_INPUT_NICK_NAME));
+        map.add(new Pair(STRING_INPUT_GROUP, PATTERN_INPUT_GROUP));
+        map.add(new Pair(STRING_INPUT_HOME_PHONE, PATTERN_INPUT_PHONE));
+        map.add(new Pair(STRING_INPUT_CELLULAR_PHONE, PATTERN_INPUT_PHONE));
+        map.add(new Pair(STRING_INPUT_CELLULAR_PHONE_TWO, PATTERN_INPUT_PHONE));
+        map.add(new Pair(STRING_INPUT_EMAIL, PATTERN_INPUT_EMAIL));
+    }
+
     public Controller(Model model, View view){
         this.model = model;
         this.view = view;
+        initModel();
+    }
+
+    private Model setFormField(Scanner sc, String formFieldValue, Function<String, Model> func){
+        String pattern = getPatternString(view.getString(formFieldValue));
+        return model.setFormField(inputStringValueWithScanner(sc,
+                view.getString(formFieldValue),
+                view.getString(pattern)), func);
+    }
+
+    String getPatternString(String key){
+        for(Pair<String, String> pair : map){
+            if (pair.getKey()==key) return pair.getValue();
+        }
+        return DEFAULT_STRING;
     }
 
     public void processUser(Scanner sc){
 
         view.printMessage(view.getString(STRING_HELLO_STRING) + BREAK_LINE);
-        model.setLastName(inputStringValueWithScanner(sc,
-                view.getString(STRING_INPUT_LAST_NAME),
-                view.getString(PATTERN_INPUT_NAME)));
-        model.setViewLastName(view.getString(VIEW_LAST_NAME));
-        model.setName(inputStringValueWithScanner(sc,
-                view.getString(STRING_INPUT_NAME),
-                view.getString(PATTERN_INPUT_NAME)));
-        model.setViewName(view.getString(VIEW_NAME));
-        model.setMiddleName(inputStringValueWithScanner(sc,
-                view.getString(STRING_INPUT_MIDDLE_NAME),
-                view.getString(PATTERN_INPUT_NAME)));
-        model.setViewMiddleName(view.getString(VIEW_MIDDLE_NAME));
-        model.setNickName(inputStringValueWithScanner(sc,
-                view.getString(STRING_INPUT_NICK_NAME),
-                        view.getString(PATTERN_INPUT_NICK_NAME)));
-        model.setViewNickName(view.getString(VIEW_NICK_NAME));
-        model.setComment(inputLineWithScanner(sc,
-                view.getString(STRING_INPUT_COMMENT)));
-        model.setViewComment(view.getString(VIEW_COMMENT));
-        model.setGroup(mapGroup(inputStringValueWithScanner(sc,
-                view.getString(STRING_INPUT_GROUP) + Group.getString(),
-                view.getString(PATTERN_INPUT_GROUP))));
-        model.setViewGroup(view.getString(VIEW_GROUP));
-        model.setHomePhone(inputStringValueWithScanner(sc,
-                view.getString(STRING_INPUT_HOME_PHONE) + view.getString(STRING_PHONE_SAMPLE),
-                view.getString(PATTERN_INPUT_PHONE)));
-        model.setViewHomePhone(view.getString(VIEW_HOME_PHONE));
-        model.setCellularPhone(inputStringValueWithScanner(sc,
-                view.getString(STRING_INPUT_CELLULAR_PHONE) + view.getString(STRING_PHONE_SAMPLE),
-                view.getString(PATTERN_INPUT_PHONE)));
-        model.setViewCellularPhone(view.getString(VIEW_CELLULAR_PHONE));
+
+        model.setLastName(getValidStringValue(sc, STRING_INPUT_LAST_NAME))
+                .setViewLastName(view.getString(VIEW_LAST_NAME));
+        model.setName(getValidStringValue(sc, STRING_INPUT_NAME))
+                .setViewName(view.getString(VIEW_NAME));
+        model.setMiddleName(getValidStringValue(sc, STRING_INPUT_MIDDLE_NAME))
+                .setViewMiddleName(view.getString(VIEW_MIDDLE_NAME));
+        model.setNickName(getValidStringValue(sc, STRING_INPUT_NICK_NAME))
+                .setViewNickName(view.getString(VIEW_NICK_NAME));
+        model.setComment(inputLineWithScanner(sc, view.getString(STRING_INPUT_COMMENT)))
+                .setViewComment(view.getString(VIEW_COMMENT));
+        model.setGroup(mapGroup(getValidStringValue(sc, STRING_INPUT_GROUP)))
+                .setViewGroup(view.getString(VIEW_GROUP));
+        model.setHomePhone(getValidStringValue(sc, STRING_INPUT_HOME_PHONE))
+                .setViewHomePhone(view.getString(VIEW_HOME_PHONE));
+        model.setCellularPhone(getValidStringValue(sc, STRING_INPUT_CELLULAR_PHONE))
+                .setViewCellularPhone(view.getString(VIEW_CELLULAR_PHONE));
         if (isEnterCellularPhoneTwo(sc))
-            model.setCellularPhoneTwo(inputStringValueWithScanner(sc,
-                    view.getString(STRING_INPUT_CELLULAR_PHONE_TWO) + view.getString(STRING_PHONE_SAMPLE),
-                    view.getString(PATTERN_INPUT_PHONE)));
+            model.setCellularPhoneTwo(getValidStringValue(sc, STRING_INPUT_CELLULAR_PHONE_TWO));
         model.setViewCellularPhoneTwo(view.getString(VIEW_CELLULAR_PHONE_TWO));
-        model.setEmail(inputStringValueWithScanner(sc,
-                view.getString(STRING_INPUT_EMAIL),
-                view.getString(PATTERN_INPUT_EMAIL)));
-        model.setViewEmail(view.getString(VIEW_EMAIL));
-        model.setAddress(readAddress(sc));
-        model.setViewAddress(view.getString(VIEW_ADDRESS));
+        model.setEmail(getValidStringValue(sc, STRING_INPUT_EMAIL))
+                .setViewEmail(view.getString(VIEW_EMAIL));
+        model.setAddress(readAddress(sc)).setViewAddress(view.getString(VIEW_ADDRESS));
         model.setViewCreateDate(view.getString(VIEW_CREATE_DATE));
         model.setViewUpdateDate(view.getString(VIEW_UPDATE_DATE));
         model.setUpdateDate();
@@ -110,6 +124,13 @@ public class Controller {
             if (g.number() == Integer.decode(inputStringValueWithScanner)) return g;
         }
         return Group.UNIVERSITY;
+    }
+
+    public String getValidStringValue(Scanner sc, String property){
+        String msg = view.getString(property);
+        String pattern = view.getString(getPatternString(property));
+        if (property.equals(STRING_INPUT_GROUP)) msg += Group.getString();
+        return inputStringValueWithScanner(sc, msg, pattern);
     }
 
     public String inputStringValueWithScanner(Scanner sc, String msg, String pattern) {
