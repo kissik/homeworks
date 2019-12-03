@@ -1,11 +1,11 @@
 package ua.org.training.model;
 
-public class ElectricalAppliances {
+public class ElectricalAppliance {
 
     protected boolean plugIn;
     protected int capacity;
 
-    public ElectricalAppliances(){
+    public ElectricalAppliance(){
         plugIn = false;
         capacity = 0;
     }
@@ -14,7 +14,7 @@ public class ElectricalAppliances {
         return plugIn;
     }
 
-    public ElectricalAppliances setPlugIn(boolean plugIn) {
+    public ElectricalAppliance setPlugIn(boolean plugIn) {
         this.plugIn = plugIn;
         return this;
     }
@@ -23,7 +23,7 @@ public class ElectricalAppliances {
         return capacity;
     }
 
-    public ElectricalAppliances setCapacity(int capacity){
+    public ElectricalAppliance setCapacity(int capacity){
         this.capacity = capacity;
         return this;
     }

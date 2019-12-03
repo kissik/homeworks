@@ -3,32 +3,32 @@ package ua.org.training;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import ua.org.training.model.ElectricalAppliances;
+import ua.org.training.model.ElectricalAppliance;
 
 public class TestElectricalAppliances {
-    private static  ElectricalAppliances electricalAppliances;
+    private static  ElectricalAppliance electricalAppliance;
 
     @BeforeClass
     public static void testInit(){
-        electricalAppliances = new ElectricalAppliances();
+        electricalAppliance = new ElectricalAppliance();
     }
 
     @Test
     public void testIsPlugIn(){
-        electricalAppliances.setPlugIn(true);
-        Assert.assertTrue(electricalAppliances.isPlugIn());
+        electricalAppliance.setPlugIn(true);
+        Assert.assertTrue(electricalAppliance.isPlugIn());
     }
 
     @Test
     public void testIsPlugOut(){
-        electricalAppliances.setPlugIn(false);
-        Assert.assertFalse(electricalAppliances.isPlugIn());
+        electricalAppliance.setPlugIn(false);
+        Assert.assertFalse(electricalAppliance.isPlugIn());
     }
 
     @Test
     public void testCapacity(){
-        electricalAppliances.setCapacity(15);
-        Assert.assertTrue(electricalAppliances.getCapacity() == 15);
+        electricalAppliance.setCapacity(15);
+        Assert.assertTrue(electricalAppliance.getCapacity() == 15);
     }
 
 }
