@@ -25,5 +25,10 @@ public class TestElectricalAppliances {
         Assert.assertFalse(electricalAppliances.isPlugIn());
     }
 
+    @Test
+    public void testCapacity(){
+        electricalAppliances.setCapacity(15);
+        Assert.assertTrue(electricalAppliances.getCapacity() == 15);
+    }
 
 }
