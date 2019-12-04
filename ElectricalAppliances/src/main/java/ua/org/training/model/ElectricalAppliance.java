@@ -24,6 +24,12 @@ public class ElectricalAppliance {
         capacity = 0;
     }
 
+    public ElectricalAppliance(String title){
+        this.title = title;
+        plugIn = false;
+        capacity = 0;
+    }
+
     /**
      * The plugIn field getter method
      * @return  plugIn  is the ElectricalAppliance plugged in or not

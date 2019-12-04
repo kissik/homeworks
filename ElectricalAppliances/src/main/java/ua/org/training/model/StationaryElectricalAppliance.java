@@ -7,7 +7,8 @@ public class StationaryElectricalAppliance extends ElectricalAppliance {
         dimensions = new Dimensions();
     }
 
-    public StationaryElectricalAppliance(int width, int height, int depth){
+    public StationaryElectricalAppliance(String title, int width, int height, int depth){
+        super(title);
         dimensions = new Dimensions(width, height, depth);
     }
 }
