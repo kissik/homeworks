@@ -72,4 +72,18 @@ public class StationaryElectricalAppliance extends ElectricalAppliance {
     public int hashCode(){
         return super.hashCode() * GlobalConstants.PRIME_NUMBER + dimensions.hashCode();
     }
+
+    /**
+     * The overridden method for representing a stationary electrical appliance information as a string.
+     * @return          String value of a stationary electrical appliance information in human readable format
+     */
+    @Override
+    public String toString(){
+        StringBuffer stringBuffer = new StringBuffer(GlobalConstants.STRING_BUFFER_SIZE);
+        return stringBuffer
+                .append(super.toString())
+                .append(GlobalConstants.ELECTRICAL_APPLIANCE_STRING_DELIMITER)
+                .append(dimensions.toString())
+                .toString();
+    }
 }
