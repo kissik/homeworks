@@ -1,5 +1,11 @@
 package ua.org.training.model;
 
+/**
+ * Energy Label enum
+ * @author      <a href="mailto:iryna.v.afanasieva@gmail.com">Ira Afanasieva</a>
+ * @version     1.0, 12/4/2019
+ */
+
 public enum EnergyLabel {
     A_TRIPLE_PLUS   (0, 21, "A+++" ),
     A_DOUBLE_PLUS   (22, 32, "A++" ),

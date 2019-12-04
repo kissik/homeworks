@@ -3,7 +3,11 @@ package ua.org.training.controller;
 import ua.org.training.view.GlobalConstants;
 import ua.org.training.view.View;
 
-import java.nio.file.Paths;
+/**
+ * class Controller
+ * @author      <a href="mailto:iryna.v.afanasieva@gmail.com">Ira Afanasieva</a>
+ * @version     1.0, 12/4/2019
+ */
 import java.util.ArrayList;
 
 public class Controller {

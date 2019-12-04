@@ -1,5 +1,10 @@
 package ua.org.training.view;
 
+/**
+ * interface GlobalConstants
+ * @author      <a href="mailto:iryna.v.afanasieva@gmail.com">Ira Afanasieva</a>
+ * @version     1.0, 12/4/2019
+ */
 public interface GlobalConstants {
     boolean ELECTRICAL_APPLIANCE_PLUG_IN_DEFAULT_VALUE = false;
     int ELECTRICAL_APPLIANCE_CAPACITY_DEFAULT_VALUE = 0;
