@@ -111,4 +111,30 @@ public class ElectricalAppliance {
     public int hashCode(){
         return capacity * GlobalConstants.PRIME_NUMBER + ((title == null) ? 0 : title.hashCode());
     }
+
+    /**
+     * The overridden method for representing a electrical appliance information as a string.
+     * @return          String value of a electrical appliance information in human readable format
+     */
+    @Override
+    public String toString(){
+        StringBuffer stringBuffer = new StringBuffer(GlobalConstants.STRING_BUFFER_SIZE);
+        return stringBuffer
+                .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TITLE)
+                .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_STRING_DELIMITER)
+                .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
+                .append(title)
+                .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_STRING_DELIMITER)
+                .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_CAPACITY)
+                .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_STRING_DELIMITER)
+                .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
+                .append(capacity)
+                .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_STRING_DELIMITER)
+                .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
+                .append(
+                        (plugIn) ?
+                                GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_PLUG_IN
+                                : GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_PLUG_OUT)
+                .toString();
+    }
 }
