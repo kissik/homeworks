@@ -16,4 +16,8 @@ public class TestStationaryElectricalAppliance {
     public void testIsPlugIn(){
         Assert.assertTrue(stationaryElectricalAppliance.setPlugIn(true).isPlugIn());
     }
+    @Test
+    public void testDimensionsHashCode(){
+        Assert.assertTrue(stationaryElectricalAppliance.dimensions.setHeight(1).setDepth(1).hashCode() == 32);
+    }
 }
