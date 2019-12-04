@@ -7,10 +7,13 @@ import ua.org.training.model.ElectricalAppliance;
 
 public class TestElectricalAppliances {
     private static  ElectricalAppliance electricalAppliance;
+    private final static int CAPACITY = 15;
+    private final int PRIME_VALUE = 31;
 
     @BeforeClass
     public static void testInit(){
         electricalAppliance = new ElectricalAppliance();
+        electricalAppliance.setCapacity(CAPACITY);
     }
 
     @Test
@@ -27,13 +30,12 @@ public class TestElectricalAppliances {
 
     @Test
     public void testCapacity(){
-        electricalAppliance.setCapacity(15);
-        Assert.assertTrue(electricalAppliance.getCapacity() == 15);
+        Assert.assertTrue(electricalAppliance.getCapacity() == CAPACITY);
     }
 
     @Test
     public void testHashCode(){
-        Assert.assertTrue(electricalAppliance.setCapacity(15).hashCode() == 31 * 15);
+        Assert.assertTrue(electricalAppliance.hashCode() == PRIME_VALUE * CAPACITY);
     }
 
 }
