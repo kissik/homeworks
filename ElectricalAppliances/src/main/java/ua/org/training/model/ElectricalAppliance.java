@@ -9,10 +9,17 @@ package ua.org.training.model;
 
 public class ElectricalAppliance {
 
+    public static boolean ELECTRICAL_APPLIANCE_PLUG_IN_DEFAULT_VALUE = false;
+    public static int ELECTRICAL_APPLIANCE_CAPACITY_DEFAULT_VALUE = 0;
+
     protected boolean plugIn;
     protected int capacity;
     protected String title;
 
+    private void init(){
+        plugIn = ELECTRICAL_APPLIANCE_PLUG_IN_DEFAULT_VALUE;
+        capacity = ELECTRICAL_APPLIANCE_CAPACITY_DEFAULT_VALUE;
+    }
     /**
      * ElectricalAppliance default constructor
      * with default values:
@@ -20,14 +27,12 @@ public class ElectricalAppliance {
      * the capacity field is 0
      */
     public ElectricalAppliance(){
-        plugIn = false;
-        capacity = 0;
+        init();
     }
 
     public ElectricalAppliance(String title){
         this.title = title;
-        plugIn = false;
-        capacity = 0;
+        init();
     }
 
     /**
