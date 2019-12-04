@@ -130,6 +130,8 @@ public class ElectricalAppliance implements Comparable<ElectricalAppliance> {
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_CAPACITY)
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
                 .append(capacity)
+                .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
+                .append(EnergyLabel.getLabel(capacity))
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_STRING_DELIMITER)
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
                 .append(
