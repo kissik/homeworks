@@ -1,5 +1,7 @@
 package ua.org.training.model;
 
+import ua.org.training.view.GlobalConstants;
+
 /**
  * PortableElectricalAppliances is the class for
  * a portable electrical appliance
@@ -38,6 +40,6 @@ public class PortableElectricalAppliances extends ElectricalAppliance {
 
     @Override
     public int hashCode(){
-        return super.hashCode()*PRIME_NUMBER + chargeLevel;
+        return super.hashCode()* GlobalConstants.PRIME_NUMBER + chargeLevel;
     }
 }

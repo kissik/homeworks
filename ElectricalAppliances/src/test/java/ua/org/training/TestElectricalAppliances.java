@@ -4,11 +4,11 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import ua.org.training.model.ElectricalAppliance;
+import ua.org.training.view.GlobalConstants;
 
 public class TestElectricalAppliances {
     private static ElectricalAppliance electricalAppliance;
     private final static int CAPACITY = 15;
-    private final int PRIME_VALUE = 31;
 
     @BeforeClass
     public static void testInit(){
@@ -35,7 +35,7 @@ public class TestElectricalAppliances {
 
     @Test
     public void testHashCode(){
-        Assert.assertTrue(electricalAppliance.hashCode() == PRIME_VALUE * CAPACITY);
+        Assert.assertTrue(electricalAppliance.hashCode() == GlobalConstants.PRIME_NUMBER * CAPACITY);
     }
 
 }

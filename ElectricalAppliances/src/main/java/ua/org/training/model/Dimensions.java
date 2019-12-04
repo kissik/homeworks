@@ -1,10 +1,8 @@
 package ua.org.training.model;
 
-public class Dimensions {
+import ua.org.training.view.GlobalConstants;
 
-    public final int PRIME_NUMBER = 31;
-    public final int STRING_BUFFER_SIZE = 20;
-    public final String DIMENSION_STRING_DELIMITER = " * ";
+public class Dimensions {
 
     private int width;
     private int height;
@@ -51,17 +49,17 @@ public class Dimensions {
 
     @Override
     public int hashCode(){
-        return (width * PRIME_NUMBER + height) * PRIME_NUMBER + depth;
+        return (width * GlobalConstants.PRIME_NUMBER + height) * GlobalConstants.PRIME_NUMBER + depth;
     }
 
     @Override
     public String toString(){
-        StringBuffer stringBuffer = new StringBuffer(STRING_BUFFER_SIZE);
+        StringBuffer stringBuffer = new StringBuffer(GlobalConstants.STRING_BUFFER_SIZE);
         return stringBuffer
                 .append(width)
-                .append(DIMENSION_STRING_DELIMITER)
+                .append(GlobalConstants.DIMENSION_STRING_DELIMITER)
                 .append(height)
-                .append(DIMENSION_STRING_DELIMITER)
+                .append(GlobalConstants.DIMENSION_STRING_DELIMITER)
                 .append(depth)
                 .toString();
     }

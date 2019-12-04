@@ -1,5 +1,7 @@
 package ua.org.training.model;
 
+import ua.org.training.view.GlobalConstants;
+
 /**
  * ElectricalAppliances is the basic class for
  * a portable and stationary electrical appliance
@@ -9,17 +11,13 @@ package ua.org.training.model;
 
 public class ElectricalAppliance {
 
-    public final boolean ELECTRICAL_APPLIANCE_PLUG_IN_DEFAULT_VALUE = false;
-    public final int ELECTRICAL_APPLIANCE_CAPACITY_DEFAULT_VALUE = 0;
-    public final int PRIME_NUMBER = 31;
-
     protected boolean plugIn;
     protected int capacity;
     protected String title;
 
     private void init(){
-        plugIn = ELECTRICAL_APPLIANCE_PLUG_IN_DEFAULT_VALUE;
-        capacity = ELECTRICAL_APPLIANCE_CAPACITY_DEFAULT_VALUE;
+        plugIn = GlobalConstants.ELECTRICAL_APPLIANCE_PLUG_IN_DEFAULT_VALUE;
+        capacity = GlobalConstants.ELECTRICAL_APPLIANCE_CAPACITY_DEFAULT_VALUE;
         title = null;
     }
     /**
@@ -27,7 +25,7 @@ public class ElectricalAppliance {
      * with default values:
      * the plugIn field is ELECTRICAL_APPLIANCE_PLUG_IN_DEFAULT_VALUE
      * the capacity field is ELECTRICAL_APPLIANCE_CAPACITY_DEFAULT_VALUE
-     * Please see the {@link ua.org.training.GlobalConstants} interface for values
+     * Please see the {@link ua.org.training.view.GlobalConstants} interface for values
      */
     public ElectricalAppliance(){
         init();
@@ -99,6 +97,6 @@ public class ElectricalAppliance {
 
     @Override
     public int hashCode(){
-        return capacity * PRIME_NUMBER + ((title == null) ? 0 : title.hashCode());
+        return capacity * GlobalConstants.PRIME_NUMBER + ((title == null) ? 0 : title.hashCode());
     }
 }
