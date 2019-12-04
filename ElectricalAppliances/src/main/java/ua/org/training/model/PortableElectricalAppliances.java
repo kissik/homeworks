@@ -38,6 +38,20 @@ public class PortableElectricalAppliances extends ElectricalAppliance {
         return this;
     }
 
+    /**
+     * The overridden method of hash code computation.
+     * The formula for computation is:
+     * super.hashCode() * PRIME_NUMBER + chargeLevel,
+     * where:
+     * <ul>
+     *      <li>super is basic class of the current object.Please see the
+     *      {@link ua.org.training.model.ElectricalAppliance} for details</li>
+     *      <li>chargeLevel is field of the current object</li>
+     *      <li>PRIME_NUMBER is constant. Please see the
+     *      {@link ua.org.training.view.GlobalConstants} interface for value</li>
+     * </ul>
+     * @return          integer value of hash code;
+     */
     @Override
     public int hashCode(){
         return super.hashCode()* GlobalConstants.PRIME_NUMBER + chargeLevel;
