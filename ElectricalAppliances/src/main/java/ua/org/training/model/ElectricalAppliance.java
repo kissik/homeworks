@@ -95,6 +95,18 @@ public class ElectricalAppliance {
         return this;
     }
 
+     /**
+     * The overridden method of hash code computation.
+     * The formula for computation is:
+     * capacity * PRIME_NUMBER + title.hashCode(),
+     * where:
+     * <ul>
+     *      <li>capacity is the field of the current object</li>
+     *      <li>PRIME_NUMBER is constant. Please see the
+     *      {@link ua.org.training.view.GlobalConstants} interface for value</li>
+     * </ul>
+     * @return          integer value of hash code;
+     */
     @Override
     public int hashCode(){
         return capacity * GlobalConstants.PRIME_NUMBER + ((title == null) ? 0 : title.hashCode());

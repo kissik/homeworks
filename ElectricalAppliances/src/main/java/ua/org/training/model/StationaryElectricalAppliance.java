@@ -52,7 +52,6 @@ public class StationaryElectricalAppliance extends ElectricalAppliance {
         return this;
     }
 
-
     /**
      * The overridden method of hash code computation.
      * The formula for computation is:
