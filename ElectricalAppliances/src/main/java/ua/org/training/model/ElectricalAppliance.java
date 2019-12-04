@@ -9,8 +9,9 @@ package ua.org.training.model;
 
 public class ElectricalAppliance {
 
-    public static boolean ELECTRICAL_APPLIANCE_PLUG_IN_DEFAULT_VALUE = false;
-    public static int ELECTRICAL_APPLIANCE_CAPACITY_DEFAULT_VALUE = 0;
+    public final boolean ELECTRICAL_APPLIANCE_PLUG_IN_DEFAULT_VALUE = false;
+    public final int ELECTRICAL_APPLIANCE_CAPACITY_DEFAULT_VALUE = 0;
+    public final int PRIME_NUMBER = 31;
 
     protected boolean plugIn;
     protected int capacity;
@@ -19,6 +20,7 @@ public class ElectricalAppliance {
     private void init(){
         plugIn = ELECTRICAL_APPLIANCE_PLUG_IN_DEFAULT_VALUE;
         capacity = ELECTRICAL_APPLIANCE_CAPACITY_DEFAULT_VALUE;
+        title = null;
     }
     /**
      * ElectricalAppliance default constructor
@@ -37,8 +39,8 @@ public class ElectricalAppliance {
      * @param title String value of the title of the electrical appliance
      */
     public ElectricalAppliance(String title){
-        this.title = title;
         init();
+        this.title = title;
     }
 
     /**
@@ -95,4 +97,8 @@ public class ElectricalAppliance {
         return this;
     }
 
+    @Override
+    public int hashCode(){
+        return capacity * PRIME_NUMBER + ((title == null) ? 0 : title.hashCode());
+    }
 }

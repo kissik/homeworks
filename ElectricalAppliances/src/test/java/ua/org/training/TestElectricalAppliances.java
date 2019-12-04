@@ -31,4 +31,9 @@ public class TestElectricalAppliances {
         Assert.assertTrue(electricalAppliance.getCapacity() == 15);
     }
 
+    @Test
+    public void testHashCode(){
+        Assert.assertTrue(electricalAppliance.setCapacity(15).hashCode() == 31 * 15);
+    }
+
 }
