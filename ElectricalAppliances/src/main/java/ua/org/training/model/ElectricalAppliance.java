@@ -23,13 +23,19 @@ public class ElectricalAppliance {
     /**
      * ElectricalAppliance default constructor
      * with default values:
-     * the plugIn field is false,
-     * the capacity field is 0
+     * the plugIn field is ELECTRICAL_APPLIANCE_PLUG_IN_DEFAULT_VALUE
+     * the capacity field is ELECTRICAL_APPLIANCE_CAPACITY_DEFAULT_VALUE
+     * Please see the {@link ua.org.training.GlobalConstants} interface for values
      */
     public ElectricalAppliance(){
         init();
     }
 
+    /**
+     * ElectricalAppliance constructor with parameters
+     * Please see the default constructor for default values of parameters
+     * @param title String value of the title of the electrical appliance
+     */
     public ElectricalAppliance(String title){
         this.title = title;
         init();
