@@ -11,4 +11,9 @@ public class StationaryElectricalAppliance extends ElectricalAppliance {
         super(title);
         dimensions = new Dimensions(width, height, depth);
     }
+
+    @Override
+    public int hashCode(){
+        return super.hashCode() * PRIME_NUMBER + dimensions.hashCode();
+    }
 }
