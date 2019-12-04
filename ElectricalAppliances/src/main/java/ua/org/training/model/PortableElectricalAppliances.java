@@ -67,10 +67,11 @@ public class PortableElectricalAppliances extends ElectricalAppliance {
         return stringBuffer
                 .append(super.toString())
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_STRING_DELIMITER)
+                .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
                 .append(GlobalConstants.VIEW_PORTABLE_ELECTRICAL_APPLIANCE_CHARGE_LEVEL)
-                .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_STRING_DELIMITER)
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
                 .append(chargeLevel)
+                .append(GlobalConstants.VIEW_PORTABLE_ELECTRICAL_APPLIANCE_CHARGE_UNIT)
                 .toString();
     }
 }

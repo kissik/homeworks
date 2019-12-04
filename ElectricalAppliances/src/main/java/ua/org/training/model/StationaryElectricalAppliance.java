@@ -82,8 +82,8 @@ public class StationaryElectricalAppliance extends ElectricalAppliance {
         return stringBuffer
                 .append(super.toString())
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_STRING_DELIMITER)
+                .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
                 .append(GlobalConstants.VIEW_STATIONARY_ELECTRICAL_APPLIANCE_DIMENSIONS)
-                .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_STRING_DELIMITER)
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
                 .append(dimensions.toString())
                 .toString();

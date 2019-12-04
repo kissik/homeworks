@@ -120,13 +120,14 @@ public class ElectricalAppliance implements Comparable<ElectricalAppliance> {
     public String toString(){
         StringBuffer stringBuffer = new StringBuffer(GlobalConstants.STRING_BUFFER_SIZE);
         return stringBuffer
-                .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TITLE)
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_STRING_DELIMITER)
+                .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
+                .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TITLE)
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
                 .append(title)
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_STRING_DELIMITER)
+                .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_CAPACITY)
-                .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_STRING_DELIMITER)
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
                 .append(capacity)
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_STRING_DELIMITER)
