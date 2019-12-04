@@ -11,6 +11,7 @@ public class ElectricalAppliance {
 
     protected boolean plugIn;
     protected int capacity;
+    protected String title;
 
     /**
      * ElectricalAppliance default constructor
@@ -43,7 +44,7 @@ public class ElectricalAppliance {
 
     /**
      * The capacity field getter method
-     * @return  capacity field in kilowatt hour
+     * @return  capacity field in kilowatt hour unit
      */
     public int getCapacity() {
         return capacity;
@@ -51,11 +52,30 @@ public class ElectricalAppliance {
 
     /**
      * The capacity field setter method
-     * @param capacity  integer value of the kilowatt hour unit
+     * @param capacity  integer value of the capacity in kilowatt hour unit
      * @return reference to the current ElectricalAppliance object
      */
     public ElectricalAppliance setCapacity(int capacity){
         this.capacity = capacity;
         return this;
     }
+
+    /**
+     * The title field getter method
+     * @return  title of the electrical appliance
+     */
+    public String getTitle() {
+        return title;
+    }
+
+    /**
+     * The title field setter method
+     * @param   title   String value of the title of the electrical appliance
+     * @return  reference to the current ElectricalAppliance object
+     */
+    public ElectricalAppliance setTitle(String title) {
+        this.title = title;
+        return this;
+    }
+
 }
