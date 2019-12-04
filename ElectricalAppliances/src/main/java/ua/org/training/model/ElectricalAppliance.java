@@ -2,7 +2,7 @@ package ua.org.training.model;
 
 /**
  * ElectricalAppliances is the basic class for
- * a mobile and stationary electrical appliance
+ * a portable and stationary electrical appliance
  * @author      <a href="mailto:iryna.v.afanasieva@gmail.com">Ira Afanasieva</a>
  * @version     1.0, 12/3/2019
  */
