@@ -27,12 +27,16 @@ public interface GlobalConstants {
     String VIEW_PORTABLE_ELECTRICAL_APPLIANCE_CHARGE_LEVEL = "Charge Level:";
     String VIEW_PORTABLE_ELECTRICAL_APPLIANCE_CHARGE_UNIT = "%";
 
+    String VIEW_TOTAL_CAPACITY = "Total Capacity = ";
+
     String SORTING_MESSAGES_BEFORE = "---------------> Before Sorting: <---------------";
     String SORTING_MESSAGES_AFTER = "---------------> After Sorting: <---------------";
     String SOURCE_ELECTRICAL_APPLIANCE_FILE_NAME =
             "/home/irochka/project/temp/java/homeworks/ElectricalAppliances/target/classes/ElectricalAppliances.txt";
     String SOURCE_PORTABLE_ELECTRICAL_APPLIANCE_FILE_NAME =
             "/home/irochka/project/temp/java/homeworks/ElectricalAppliances/target/classes/PortableElectricalAppliances.txt";
+    String SOURCE_STATIONARY_ELECTRICAL_APPLIANCE_FILE_NAME =
+            "/home/irochka/project/temp/java/homeworks/ElectricalAppliances/target/classes/StationaryElectricalAppliances.txt";
     int PRIME_NUMBER = 31;
     int STRING_BUFFER_SIZE = 200;
 }
