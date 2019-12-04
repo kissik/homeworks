@@ -7,9 +7,11 @@ import ua.org.training.model.PortableElectricalAppliances;
 
 public class TestPortableElectricalAppliances {
     private static PortableElectricalAppliances portableElectricalAppliances;
+    private static final int CHARGE_LEVEL = 50;
     @BeforeClass
     public static void testInit(){
         portableElectricalAppliances = new PortableElectricalAppliances();
+        portableElectricalAppliances.setChargeLevel(CHARGE_LEVEL);
     }
 
     @Test
@@ -18,6 +20,10 @@ public class TestPortableElectricalAppliances {
     }
     @Test
     public void testChargeLevel(){
-        Assert.assertTrue(portableElectricalAppliances.setChargeLevel(50).getChargeLevel()==50);
+        Assert.assertTrue(portableElectricalAppliances.getChargeLevel() == CHARGE_LEVEL);
+    }
+    @Test
+    public void testHashCode(){
+        Assert.assertTrue(portableElectricalAppliances.hashCode() == CHARGE_LEVEL);
     }
 }

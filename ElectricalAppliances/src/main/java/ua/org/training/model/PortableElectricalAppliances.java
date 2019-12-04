@@ -35,4 +35,9 @@ public class PortableElectricalAppliances extends ElectricalAppliance {
         this.chargeLevel = chargeLevel;
         return this;
     }
+
+    @Override
+    public int hashCode(){
+        return super.hashCode()*PRIME_NUMBER + chargeLevel;
+    }
 }

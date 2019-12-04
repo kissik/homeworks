@@ -6,7 +6,7 @@ import org.junit.Test;
 import ua.org.training.model.ElectricalAppliance;
 
 public class TestElectricalAppliances {
-    private static  ElectricalAppliance electricalAppliance;
+    private static ElectricalAppliance electricalAppliance;
     private final static int CAPACITY = 15;
     private final int PRIME_VALUE = 31;
 
