@@ -56,4 +56,21 @@ public class PortableElectricalAppliances extends ElectricalAppliance {
     public int hashCode(){
         return super.hashCode()* GlobalConstants.PRIME_NUMBER + chargeLevel;
     }
+
+    /**
+     * The overridden method for representing a portable electrical appliance information as a string.
+     * @return          String value of a portable electrical appliance information in human readable format
+     */
+    @Override
+    public String toString(){
+        StringBuffer stringBuffer = new StringBuffer(GlobalConstants.STRING_BUFFER_SIZE);
+        return stringBuffer
+                .append(super.toString())
+                .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_STRING_DELIMITER)
+                .append(GlobalConstants.VIEW_PORTABLE_ELECTRICAL_APPLIANCE_CHARGE_LEVEL)
+                .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_STRING_DELIMITER)
+                .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
+                .append(chargeLevel)
+                .toString();
+    }
 }
