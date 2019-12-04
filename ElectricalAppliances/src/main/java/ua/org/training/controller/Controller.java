@@ -10,6 +10,7 @@ import ua.org.training.model.ElectricalAppliance;
  * @version     1.0, 12/4/2019
  */
 import java.util.ArrayList;
+import java.util.Collections;
 
 import static java.lang.System.exit;
 
@@ -23,14 +24,25 @@ public class Controller {
     public void processUser() {
         UtilityController utilityController = new UtilityController();
         ArrayList<ElectricalAppliance> electricalAppliancesArrayList = new ArrayList<>();
+        readElectricalAppliancesFromFile(utilityController, electricalAppliancesArrayList);
+
+        printCollection(electricalAppliancesArrayList, GlobalConstants.SORTING_MESSAGES_BEFORE);
+        Collections.sort(electricalAppliancesArrayList);
+        printCollection(electricalAppliancesArrayList, GlobalConstants.SORTING_MESSAGES_AFTER);
+    }
+
+    private void readElectricalAppliancesFromFile(UtilityController utilityController, ArrayList<ElectricalAppliance> electricalAppliancesArrayList) {
         ArrayList<String> array = utilityController
                 .getLines(GlobalConstants.SOURCE_ELECTRICAL_APPLIANCE_FILE_NAME);
         for(String string : array){
             electricalAppliancesArrayList.add(getElectricalAppliance(string));
         }
-        for(ElectricalAppliance electricalAppliance : electricalAppliancesArrayList)
-            view.printMessage(electricalAppliance.toString());
+    }
 
+    private void printCollection(ArrayList<ElectricalAppliance> electricalAppliancesArrayList, String sortingMessagesBefore) {
+        view.printMessage(sortingMessagesBefore);
+        for (ElectricalAppliance electricalAppliance : electricalAppliancesArrayList)
+            view.printMessage(electricalAppliance.toString());
     }
 
     private ElectricalAppliance getElectricalAppliance(String stringFromFile){

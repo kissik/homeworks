@@ -9,7 +9,7 @@ import ua.org.training.view.GlobalConstants;
  * @version     1.0, 12/3/2019
  */
 
-public class ElectricalAppliance {
+public class ElectricalAppliance implements Comparable<ElectricalAppliance> {
 
     protected boolean plugIn;
     protected int capacity;
@@ -136,5 +136,15 @@ public class ElectricalAppliance {
                                 GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_PLUG_IN
                                 : GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_PLUG_OUT)
                 .toString();
+    }
+
+    /**
+     * The method for implement comparable interface.
+     * @return          integer value of a electrical appliance information in human readable format
+     */
+    public int compareTo(ElectricalAppliance electricalAppliance) {
+        return this.capacity > electricalAppliance.capacity
+                ? 1
+                : (this.capacity < electricalAppliance.capacity ? -1 : 0);
     }
 }

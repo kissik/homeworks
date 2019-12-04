@@ -22,6 +22,8 @@ public interface GlobalConstants {
     String VIEW_STATIONARY_ELECTRICAL_APPLIANCE_DIMENSIONS = "Dimensions:";
     String VIEW_PORTABLE_ELECTRICAL_APPLIANCE_CHARGE_LEVEL = "Charge Level:";
 
+    String SORTING_MESSAGES_BEFORE = "---------------> Before Sorting: <---------------";
+    String SORTING_MESSAGES_AFTER = "---------------> After Sorting: <---------------";
     String SOURCE_ELECTRICAL_APPLIANCE_FILE_NAME = "/home/irochka/project/temp/java/homeworks/ElectricalAppliances/target/classes/ElectricalAppliances.txt";
 
     int PRIME_NUMBER = 31;
