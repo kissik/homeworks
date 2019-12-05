@@ -1,6 +1,9 @@
 package ua.org.training.model;
 
+import javafx.util.Pair;
 import ua.org.training.view.GlobalConstants;
+
+import java.util.ArrayList;
 
 /**
  * <p>ElectricalAppliances is the basic class for
@@ -151,5 +154,21 @@ public class ElectricalAppliance implements Comparable<ElectricalAppliance> {
         return this.capacity > electricalAppliance.capacity
                 ? 1
                 : (this.capacity < electricalAppliance.capacity ? -1 : 0);
+    }
+
+    /**
+     * <p>The method for checking if object is satisfy the condition</p>
+     * @return          true if object is satisfy the condition, otherwise - false
+     */
+    public boolean findByParameters(ArrayList<Pair<String, String>> parameters){
+        for(Pair<String, String> parameter : parameters) {
+            if (parameter.getValue() == GlobalConstants.SEARCH_ELECTRICAL_APPLIANCE_TITLE)
+                if (parameter.getKey().equals(title) == false) return false;
+            if (parameter.getValue() == GlobalConstants.SEARCH_ELECTRICAL_APPLIANCE_CAPACITY)
+                if (Integer.valueOf(parameter.getKey()) != capacity) return false;
+            if (parameter.getValue() == GlobalConstants.SEARCH_ELECTRICAL_APPLIANCE_PLUG_IN)
+                if (Boolean.valueOf(parameter.getKey()) != plugIn) return false;
+        }
+        return true;
     }
 }

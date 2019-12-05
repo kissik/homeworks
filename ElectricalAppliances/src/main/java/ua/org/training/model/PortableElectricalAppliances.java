@@ -1,6 +1,9 @@
 package ua.org.training.model;
 
+import javafx.util.Pair;
 import ua.org.training.view.GlobalConstants;
+
+import java.util.ArrayList;
 
 /**
  * <p>PortableElectricalAppliances is the class for
@@ -75,5 +78,18 @@ public class PortableElectricalAppliances extends ElectricalAppliance {
                 .append(chargeLevel)
                 .append(GlobalConstants.VIEW_PORTABLE_ELECTRICAL_APPLIANCE_CHARGE_UNIT)
                 .toString();
+    }
+
+    /**
+     * <p>The method for checking if object is satisfy the condition</p>
+     * @return          true if object is satisfy the condition, otherwise - false
+     */
+    @Override
+    public boolean findByParameters(ArrayList<Pair<String, String>> parameters){
+        for(Pair<String, String> parameter : parameters) {
+            if (parameter.getValue() == GlobalConstants.SEARCH_PORTABLE_ELECTRICAL_APPLIANCE_CHARGE_LEVEL)
+                if (Integer.valueOf(parameter.getKey()) != chargeLevel) return false;
+        }
+        return super.findByParameters(parameters) && true;
     }
 }

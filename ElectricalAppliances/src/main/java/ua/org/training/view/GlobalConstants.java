@@ -6,10 +6,6 @@ package ua.org.training.view;
  * @version     1.0, 12/4/2019
  */
 public interface GlobalConstants {
-    String ELECTRICAL_APPLIANCE_CLASS_NAME = "Electrical Appliance";
-    String PORTABLE_ELECTRICAL_APPLIANCE_CLASS_NAME = "Portable Electrical Appliance";
-    String STATIONARY_ELECTRICAL_APPLIANCE_CLASS_NAME = "Stationary Electrical Appliance";
-
     boolean ELECTRICAL_APPLIANCE_PLUG_IN_DEFAULT_VALUE = false;
     int ELECTRICAL_APPLIANCE_CAPACITY_DEFAULT_VALUE = 0;
     int DIMENSION_SIZE_DEFAULT_VALUE = 0;
@@ -37,6 +33,15 @@ public interface GlobalConstants {
             "/home/irochka/project/temp/java/homeworks/ElectricalAppliances/target/classes/PortableElectricalAppliances.txt";
     String SOURCE_STATIONARY_ELECTRICAL_APPLIANCE_FILE_NAME =
             "/home/irochka/project/temp/java/homeworks/ElectricalAppliances/target/classes/StationaryElectricalAppliances.txt";
+
+    String SEARCH_ELECTRICAL_APPLIANCE_CAPACITY = "capacity";
+    String SEARCH_ELECTRICAL_APPLIANCE_PLUG_IN = "plugIn";
+    String SEARCH_ELECTRICAL_APPLIANCE_TITLE = "title";
+    String SEARCH_PORTABLE_ELECTRICAL_APPLIANCE_CHARGE_LEVEL = "chargeLevel";
+    String SEARCH_STATIONARY_ELECTRICAL_APPLIANCE_WIDTH = "width";
+    String SEARCH_STATIONARY_ELECTRICAL_APPLIANCE_HEIGHT = "height";
+    String SEARCH_STATIONARY_ELECTRICAL_APPLIANCE_DEPTH = "depth";
+
     int PRIME_NUMBER = 31;
     int STRING_BUFFER_SIZE = 200;
 }

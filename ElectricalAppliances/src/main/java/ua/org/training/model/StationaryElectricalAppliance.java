@@ -1,6 +1,9 @@
 package ua.org.training.model;
 
+import javafx.util.Pair;
 import ua.org.training.view.GlobalConstants;
+
+import java.util.ArrayList;
 
 /**
  * StationaryElectricalAppliance is the class for
@@ -88,4 +91,22 @@ public class StationaryElectricalAppliance extends ElectricalAppliance {
                 .append(dimensions.toString())
                 .toString();
     }
+
+    /**
+     * <p>The method for checking if object is satisfy the condition</p>
+     * @return          true if object is satisfy the condition, otherwise - false
+     */
+    @Override
+    public boolean findByParameters(ArrayList<Pair<String, String>> parameters){
+        for(Pair<String, String> parameter : parameters) {
+            if (parameter.getValue() == GlobalConstants.SEARCH_STATIONARY_ELECTRICAL_APPLIANCE_WIDTH)
+                if (Integer.valueOf(parameter.getKey()) != dimensions.getWidth()) return false;
+            if (parameter.getValue() == GlobalConstants.SEARCH_STATIONARY_ELECTRICAL_APPLIANCE_HEIGHT)
+                if (Integer.valueOf(parameter.getKey()) != dimensions.getHeight()) return false;
+            if (parameter.getValue() == GlobalConstants.SEARCH_STATIONARY_ELECTRICAL_APPLIANCE_DEPTH)
+                if (Integer.valueOf(parameter.getKey()) != dimensions.getDepth()) return false;
+        }
+        return super.findByParameters(parameters) && true;
+    }
+
 }
