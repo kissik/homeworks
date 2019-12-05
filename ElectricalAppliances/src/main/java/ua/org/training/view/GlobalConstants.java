@@ -1,7 +1,7 @@
 package ua.org.training.view;
 
 /**
- * interface GlobalConstants
+ * <p>interface GlobalConstants see messages.properties for constants values</p>
  * @author      <a href="mailto:iryna.v.afanasieva@gmail.com">Ira Afanasieva</a>
  * @version     1.0, 12/4/2019
  */

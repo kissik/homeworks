@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * UtilityController is the class for
- * a reading String from file
+ * <p>UtilityController is the class for
+ * a reading Strings from the file</p>
  * @author      <a href="mailto:iryna.v.afanasieva@gmail.com">Ira Afanasieva</a>
  * @version     1.0, 12/4/2019
  */

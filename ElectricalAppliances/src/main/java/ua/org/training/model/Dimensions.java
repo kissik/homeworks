@@ -94,10 +94,10 @@ public class Dimensions {
     }
 
     /**
-     * The overridden method of hash code computation.
-     * The formula for computation is:
-     * (width * PRIME_NUMBER + height) * PRIME_NUMBER + depth,
-     * where:
+     * <p>The overridden method of hash code computation.
+     * The formula for computation is:</p>
+     * <code>(width * PRIME_NUMBER + height) * PRIME_NUMBER + depth,</code>
+     * <p>where:</p>
      * <ul>
      * <li>width, height, depth are fields of the current Dimensions object</li>
      * <li>PRIME_NUMBER is constant.
@@ -111,7 +111,7 @@ public class Dimensions {
     }
 
     /**
-     * The overridden method for representing dimensions information as a string.
+     * <p>The overridden method for representing dimensions information as a string</p>
      * @return          String value of dimensions information in human readable format
      */
     @Override

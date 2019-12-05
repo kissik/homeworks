@@ -8,7 +8,6 @@ import ua.org.training.view.View;
 import ua.org.training.model.ElectricalAppliance;
 
 /**
- * class Controller
  * @author      <a href="mailto:iryna.v.afanasieva@gmail.com">Ira Afanasieva</a>
  * @version     1.0, 12/4/2019
  */

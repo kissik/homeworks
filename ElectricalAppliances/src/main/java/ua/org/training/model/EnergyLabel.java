@@ -1,7 +1,8 @@
 package ua.org.training.model;
 
 /**
- * Energy Label enum
+ * <p>Energy Label enum represented European Union energy label,
+ * for details see <a href="https://en.wikipedia.org/wiki/European_Union_energy_label">energy label</a></p>
  * @author      <a href="mailto:iryna.v.afanasieva@gmail.com">Ira Afanasieva</a>
  * @version     1.0, 12/4/2019
  */

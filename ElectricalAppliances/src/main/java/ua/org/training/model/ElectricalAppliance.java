@@ -3,8 +3,9 @@ package ua.org.training.model;
 import ua.org.training.view.GlobalConstants;
 
 /**
- * ElectricalAppliances is the basic class for
- * a portable and stationary electrical appliance
+ * <p>ElectricalAppliances is the basic class for
+ * a portable {@link ua.org.training.model.PortableElectricalAppliances}
+ * and stationary {@link ua.org.training.model.StationaryElectricalAppliance} electrical appliance</p>
  * @author      <a href="mailto:iryna.v.afanasieva@gmail.com">Ira Afanasieva</a>
  * @version     1.0, 12/3/2019
  */
@@ -21,19 +22,20 @@ public class ElectricalAppliance implements Comparable<ElectricalAppliance> {
         title = null;
     }
     /**
-     * ElectricalAppliance default constructor
-     * with default values:
-     * the plugIn field is ELECTRICAL_APPLIANCE_PLUG_IN_DEFAULT_VALUE
-     * the capacity field is ELECTRICAL_APPLIANCE_CAPACITY_DEFAULT_VALUE
-     * Please see the {@link ua.org.training.view.GlobalConstants} interface for values
+     * <p>ElectricalAppliance default constructor with default values
+     * <ul>
+     * <li>the plugIn field is ELECTRICAL_APPLIANCE_PLUG_IN_DEFAULT_VALUE</li>
+     * <li>the capacity field is ELECTRICAL_APPLIANCE_CAPACITY_DEFAULT_VALUE</li>
+     * </ul>
+     * Please see the {@link ua.org.training.view.GlobalConstants} interface for values</p>
      */
     public ElectricalAppliance(){
         init();
     }
 
     /**
-     * ElectricalAppliance constructor with parameters
-     * Please see the default constructor for default values of parameters
+     * <p>ElectricalAppliance constructor with parameters.
+     * Please see the default constructor for default values of parameters</p>
      * @param title String value of the title of the electrical appliance
      */
     public ElectricalAppliance(String title){
@@ -42,7 +44,7 @@ public class ElectricalAppliance implements Comparable<ElectricalAppliance> {
     }
 
     /**
-     * The plugIn field getter method
+     * <p>The plugIn field getter method</p>
      * @return  plugIn  is the ElectricalAppliance plugged in or not
      */
     public boolean isPlugIn() {
@@ -50,7 +52,7 @@ public class ElectricalAppliance implements Comparable<ElectricalAppliance> {
     }
 
     /**
-     * The plugIn field setter method
+     * <p>The plugIn field setter method</p>
      * @param   plugIn  the true value stands for plugged in, the false - plugged out state
      * @return  reference to the current ElectricalAppliance object
      */
@@ -60,7 +62,7 @@ public class ElectricalAppliance implements Comparable<ElectricalAppliance> {
     }
 
     /**
-     * The capacity field getter method
+     * <p>The capacity field getter method</p>
      * @return  capacity field in kilowatt hour unit
      */
     public int getCapacity() {
@@ -68,7 +70,7 @@ public class ElectricalAppliance implements Comparable<ElectricalAppliance> {
     }
 
     /**
-     * The capacity field setter method
+     * <p>The capacity field setter method</p>
      * @param capacity  integer value of the capacity in kilowatt hour unit
      * @return reference to the current ElectricalAppliance object
      */
@@ -78,7 +80,7 @@ public class ElectricalAppliance implements Comparable<ElectricalAppliance> {
     }
 
     /**
-     * The title field getter method
+     * <p>The title field getter method</p>
      * @return  title of the electrical appliance
      */
     public String getTitle() {
@@ -86,7 +88,7 @@ public class ElectricalAppliance implements Comparable<ElectricalAppliance> {
     }
 
     /**
-     * The title field setter method
+     * <p>The title field setter method</p>
      * @param   title   String value of the title of the electrical appliance
      * @return  reference to the current ElectricalAppliance object
      */
@@ -96,10 +98,10 @@ public class ElectricalAppliance implements Comparable<ElectricalAppliance> {
     }
 
      /**
-     * The overridden method of hash code computation.
-     * The formula for computation is:
-     * capacity * PRIME_NUMBER + title.hashCode(),
-     * where:
+     * <p>The overridden method of hash code computation.
+     * The formula for computation is:</p>
+     * <code>capacity * PRIME_NUMBER + title.hashCode(),</code>
+     * <p>where:</p>
      * <ul>
      *      <li>capacity is the field of the current object</li>
      *      <li>PRIME_NUMBER is constant. Please see the
@@ -113,7 +115,7 @@ public class ElectricalAppliance implements Comparable<ElectricalAppliance> {
     }
 
     /**
-     * The overridden method for representing a electrical appliance information as a string.
+     * <p>The overridden method for representing a electrical appliance information as a string</p>
      * @return          String value of a electrical appliance information in human readable format
      */
     @Override
@@ -142,7 +144,7 @@ public class ElectricalAppliance implements Comparable<ElectricalAppliance> {
     }
 
     /**
-     * The method for implement comparable interface.
+     * <p>The method for implementing comparable interface</p>
      * @return          integer value of a electrical appliance information in human readable format
      */
     public int compareTo(ElectricalAppliance electricalAppliance) {

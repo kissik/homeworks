@@ -15,14 +15,14 @@ public class StationaryElectricalAppliance extends ElectricalAppliance {
     private Dimensions dimensions;
 
     /**
-     * StationaryElectricalAppliance default constructor
+     * <p>StationaryElectricalAppliance default constructor</p>
      */
     public StationaryElectricalAppliance(){
         dimensions = new Dimensions();
     }
 
     /**
-     * StationaryElectricalAppliance constructor with parameters
+     * <p>StationaryElectricalAppliance constructor with parameters</p>
      * @param title     String value of the title
      * @param width     integer value of the width in the centimeters
      * @param height    integer value of the height in the centimeters
@@ -34,7 +34,7 @@ public class StationaryElectricalAppliance extends ElectricalAppliance {
     }
 
     /**
-     * The dimensions field getter method
+     * <p>The dimensions field getter method</p>
      * @return              reference to the Dimensions ({@link ua.org.training.model.Dimensions})
      * object of the current StationaryElectricalAppliance object
      */
@@ -43,7 +43,7 @@ public class StationaryElectricalAppliance extends ElectricalAppliance {
     }
 
     /**
-     * The dimensions field setter method
+     * <p>The dimensions field setter method</p>
      * @param dimensions    Dimension ({@link ua.org.training.model.Dimensions}) value of the current object
      * @return              reference of the current StationaryElectricalAppliance object
      */
@@ -53,10 +53,10 @@ public class StationaryElectricalAppliance extends ElectricalAppliance {
     }
 
     /**
-     * The overridden method of hash code computation.
-     * The formula for computation is:
-     * super.hashCode() * PRIME_NUMBER + dimensions.hashCode(),
-     * where:
+     * <p>The overridden method of hash code computation.
+     * The formula for computation is:</p>
+     * <code>super.hashCode() * PRIME_NUMBER + dimensions.hashCode(),</code>
+     * <p>where:</p>
      * <ul>
      *      <li>super is basic class of the current object.Please see the
      *      {@link ua.org.training.model.ElectricalAppliance} for details</li>
@@ -73,7 +73,7 @@ public class StationaryElectricalAppliance extends ElectricalAppliance {
     }
 
     /**
-     * The overridden method for representing a stationary electrical appliance information as a string.
+     * <p>The overridden method for representing a stationary electrical appliance information as a string</p>
      * @return          String value of a stationary electrical appliance information in human readable format
      */
     @Override

@@ -3,8 +3,8 @@ package ua.org.training.model;
 import ua.org.training.view.GlobalConstants;
 
 /**
- * PortableElectricalAppliances is the class for
- * a portable electrical appliance
+ * <p>PortableElectricalAppliances is the class for
+ * a portable electrical appliance</p>
  * @author      <a href="mailto:iryna.v.afanasieva@gmail.com">Ira Afanasieva</a>
  * @version     1.0, 12/4/2019
  */
@@ -12,16 +12,18 @@ public class PortableElectricalAppliances extends ElectricalAppliance {
 
     private int chargeLevel;
     /**
-     * PortableElectricalAppliance default constructor
-     * with default values:
-     * the chargeLevel is 100 percent
+     * <p>PortableElectricalAppliance default constructor
+     * with default values:</p>
+     * <ul>
+     * <li>the chargeLevel is 100 percent</li>
+     * </ul>
      */
     public PortableElectricalAppliances(){
         chargeLevel = 100;
     }
 
     /**
-     * The chargeLevel field getter
+     * <p>The chargeLevel field getter</p>
      * @return a charge level in percentage
      */
     public int getChargeLevel() {
@@ -29,7 +31,7 @@ public class PortableElectricalAppliances extends ElectricalAppliance {
     }
 
     /**
-     * The chargeLevel field setter method
+     * <p>The chargeLevel field setter method</p>
      * @param chargeLevel integer value of the charge level in percentage
      * @return reference to the current PortableElectricalAppliances object
      */
@@ -39,10 +41,10 @@ public class PortableElectricalAppliances extends ElectricalAppliance {
     }
 
     /**
-     * The overridden method of hash code computation.
-     * The formula for computation is:
-     * super.hashCode() * PRIME_NUMBER + chargeLevel,
-     * where:
+     * <p>The overridden method of hash code computation.
+     * The formula for computation is:</p>
+     * <code>super.hashCode() * PRIME_NUMBER + chargeLevel,</code>
+     * <p>where:</p>
      * <ul>
      *      <li>super is basic class of the current object.Please see the
      *      {@link ua.org.training.model.ElectricalAppliance} for details</li>
@@ -58,7 +60,7 @@ public class PortableElectricalAppliances extends ElectricalAppliance {
     }
 
     /**
-     * The overridden method for representing a portable electrical appliance information as a string.
+     * <p>The overridden method for representing a portable electrical appliance information as a string</p>
      * @return          String value of a portable electrical appliance information in human readable format
      */
     @Override
