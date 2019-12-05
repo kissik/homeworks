@@ -6,37 +6,43 @@ package ua.org.training.view;
  * @version     1.0, 12/4/2019
  */
 public interface GlobalConstants {
+
+    int PRIME_NUMBER = 31;
+    int STRING_BUFFER_SIZE = 200;
     boolean ELECTRICAL_APPLIANCE_PLUG_IN_DEFAULT_VALUE = false;
     int ELECTRICAL_APPLIANCE_CAPACITY_DEFAULT_VALUE = 0;
     int DIMENSION_SIZE_DEFAULT_VALUE = 0;
     String DIMENSION_STRING_DELIMITER = " * ";
-
-    String VIEW_ELECTRICAL_APPLIANCE_TITLE = "Title:";
-    String VIEW_ELECTRICAL_APPLIANCE_CAPACITY = "Capacity:";
-    String VIEW_ELECTRICAL_APPLIANCE_CAPACITY_UNIT = "kilowatt/hour";
-    String VIEW_ELECTRICAL_APPLIANCE_PLUG_IN = "Plug in";
-    String VIEW_ELECTRICAL_APPLIANCE_PLUG_OUT = "Plug out";
+    String MESSAGES_BUNDLE_NAME = "messages";
+    String DEFAULT_STRING = "";
 
     String VIEW_ELECTRICAL_APPLIANCE_TABULATION = "\t";
     String VIEW_ELECTRICAL_APPLIANCE_STRING_DELIMITER = "\n";
-
-    String VIEW_STATIONARY_ELECTRICAL_APPLIANCE_DIMENSIONS = "Dimensions:";
-    String VIEW_PORTABLE_ELECTRICAL_APPLIANCE_CHARGE_LEVEL = "Charge Level:";
     String VIEW_PORTABLE_ELECTRICAL_APPLIANCE_CHARGE_UNIT = "%";
 
-    String VIEW_TOTAL_CAPACITY = "Total Capacity = ";
+    String VIEW_ELECTRICAL_APPLIANCE_TITLE = "view.electrical.appliance.title";
+    String VIEW_ELECTRICAL_APPLIANCE_CAPACITY = "view.electrical.appliance.capacity";
+    String VIEW_ELECTRICAL_APPLIANCE_CAPACITY_UNIT = "view.electrical.appliance.capacity.unit";
+    String VIEW_ELECTRICAL_APPLIANCE_PLUG_IN = "view.electrical.appliance.plug.in";
+    String VIEW_ELECTRICAL_APPLIANCE_PLUG_OUT = "view.electrical.appliance.plug.out";
 
-    String SORTING_MESSAGES_BEFORE = "---------------> Before Sorting: <---------------";
-    String SORTING_MESSAGES_AFTER = "---------------> After Sorting: <---------------";
+    String VIEW_STATIONARY_ELECTRICAL_APPLIANCE_DIMENSIONS = "view.stationary.electrical.appliance.dimensions";
+    String VIEW_PORTABLE_ELECTRICAL_APPLIANCE_CHARGE_LEVEL = "view.portable.electrical.appliance.charge.level";
+
+    String VIEW_TOTAL_CAPACITY = "view.total.capacity";
+
+    String SORTING_MESSAGES_BEFORE = "sorting.before.message";
+    String SORTING_MESSAGES_AFTER = "sorting.after.message";
     String SOURCE_ELECTRICAL_APPLIANCE_FILE_NAME =
-            "/home/irochka/project/temp/java/homeworks/ElectricalAppliances/target/classes/ElectricalAppliances.txt";
+            "source.electrical.appliance";
     String SOURCE_PORTABLE_ELECTRICAL_APPLIANCE_FILE_NAME =
-            "/home/irochka/project/temp/java/homeworks/ElectricalAppliances/target/classes/PortableElectricalAppliances.txt";
+            "source.portable.electrical.appliance";
     String SOURCE_STATIONARY_ELECTRICAL_APPLIANCE_FILE_NAME =
-            "/home/irochka/project/temp/java/homeworks/ElectricalAppliances/target/classes/StationaryElectricalAppliances.txt";
+            "source.stationary.electrical.appliance";
 
-    String SEARCH_FILTER = "Filters:";
-    String SEARCH_RESULTS = "Results:";
+    String SEARCH_FILTER = "search.filter";
+    String SEARCH_RESULTS = "search.results";
+
     String SEARCH_ELECTRICAL_APPLIANCE_CAPACITY = "capacity";
     String SEARCH_ELECTRICAL_APPLIANCE_PLUG_IN = "plugIn";
     String SEARCH_ELECTRICAL_APPLIANCE_TITLE = "title";
@@ -45,6 +51,4 @@ public interface GlobalConstants {
     String SEARCH_STATIONARY_ELECTRICAL_APPLIANCE_HEIGHT = "height";
     String SEARCH_STATIONARY_ELECTRICAL_APPLIANCE_DEPTH = "depth";
 
-    int PRIME_NUMBER = 31;
-    int STRING_BUFFER_SIZE = 200;
 }

@@ -43,6 +43,11 @@ public class PortableElectricalAppliances extends ElectricalAppliance {
         return this;
     }
 
+    public PortableElectricalAppliances setViewChargeLevel(String viewChargeLevel){
+        map.add(new Pair("chargeLevel",viewChargeLevel));
+        return this;
+    }
+
     /**
      * <p>The overridden method of hash code computation.
      * The formula for computation is:</p>
@@ -73,7 +78,7 @@ public class PortableElectricalAppliances extends ElectricalAppliance {
                 .append(super.toString())
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_STRING_DELIMITER)
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
-                .append(GlobalConstants.VIEW_PORTABLE_ELECTRICAL_APPLIANCE_CHARGE_LEVEL)
+                .append(getViewString("chargeLevel"))
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
                 .append(chargeLevel)
                 .append(GlobalConstants.VIEW_PORTABLE_ELECTRICAL_APPLIANCE_CHARGE_UNIT)

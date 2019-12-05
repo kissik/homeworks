@@ -18,11 +18,30 @@ public class ElectricalAppliance implements Comparable<ElectricalAppliance> {
     protected boolean plugIn;
     protected int capacity;
     protected String title;
+    protected ArrayList<Pair<String, String>> map;
+
+    public ElectricalAppliance setViewTitle(String viewTitle){
+        map.add(new Pair("title",viewTitle));
+        return this;
+    }
+
+    public ElectricalAppliance setViewCapacity(String viewCapacity, String viewCapacityUnit){
+        map.add(new Pair("capacity",viewCapacity));
+        map.add(new Pair("capacityUnit",viewCapacityUnit));
+        return this;
+    }
+
+    public ElectricalAppliance setViewPlug(String viewPlugIn, String viewPlugOut){
+        map.add(new Pair("plugIn",viewPlugIn));
+        map.add(new Pair("plugOut",viewPlugOut));
+        return this;
+    }
 
     private void init(){
         plugIn = GlobalConstants.ELECTRICAL_APPLIANCE_PLUG_IN_DEFAULT_VALUE;
         capacity = GlobalConstants.ELECTRICAL_APPLIANCE_CAPACITY_DEFAULT_VALUE;
         title = null;
+        map = new ArrayList<>();
     }
     /**
      * <p>ElectricalAppliance default constructor with default values
@@ -127,25 +146,29 @@ public class ElectricalAppliance implements Comparable<ElectricalAppliance> {
         return stringBuffer
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_STRING_DELIMITER)
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
-                .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TITLE)
+                .append(getViewString("title"))
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
                 .append(title)
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_STRING_DELIMITER)
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
-                .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_CAPACITY)
+                .append(getViewString("capacity"))
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
                 .append(capacity)
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
-                .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_CAPACITY_UNIT)
+                .append(getViewString("capacityUnit"))
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
                 .append(EnergyLabel.getLabel(capacity))
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_STRING_DELIMITER)
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
-                .append(
-                        (plugIn) ?
-                                GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_PLUG_IN
-                                : GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_PLUG_OUT)
+                .append((plugIn) ? getViewString("plugIn") : getViewString("plugOut"))
                 .toString();
+    }
+
+    protected String getViewString(String key){
+        for(Pair<String, String> pair : map){
+            if (pair.getKey()==key) return pair.getValue();
+        }
+        return GlobalConstants.DEFAULT_STRING;
     }
 
     /**

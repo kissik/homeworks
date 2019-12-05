@@ -55,6 +55,11 @@ public class StationaryElectricalAppliance extends ElectricalAppliance {
         return this;
     }
 
+    public StationaryElectricalAppliance setViewDimensions(String viewDimensions){
+        map.add(new Pair("dimensions",viewDimensions));
+        return this;
+    }
+
     /**
      * <p>The overridden method of hash code computation.
      * The formula for computation is:</p>
@@ -86,7 +91,7 @@ public class StationaryElectricalAppliance extends ElectricalAppliance {
                 .append(super.toString())
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_STRING_DELIMITER)
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
-                .append(GlobalConstants.VIEW_STATIONARY_ELECTRICAL_APPLIANCE_DIMENSIONS)
+                .append(getViewString("dimensions"))
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
                 .append(dimensions.toString())
                 .toString();

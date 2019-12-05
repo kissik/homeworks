@@ -31,17 +31,22 @@ public class Controller {
 
     public void processUser() {
         readElectricalAppliances();
-        printCollection(GlobalConstants.SORTING_MESSAGES_BEFORE);
+        printCollection(
+                view.getString(GlobalConstants.SORTING_MESSAGES_BEFORE));
         Collections.sort(electricalAppliancesArrayList);
-        printCollection(GlobalConstants.SORTING_MESSAGES_AFTER);
+        printCollection(
+                view.getString(GlobalConstants.SORTING_MESSAGES_AFTER));
         countTotalCapacity();
         findElectricityAppliance();
     }
 
     private void readElectricalAppliances(){
-        readElectricalAppliancesFromFile(GlobalConstants.SOURCE_ELECTRICAL_APPLIANCE_FILE_NAME);
-        readPortableElectricalAppliancesFromFile(GlobalConstants.SOURCE_PORTABLE_ELECTRICAL_APPLIANCE_FILE_NAME);
-        readStationaryElectricalAppliancesFromFile(GlobalConstants.SOURCE_STATIONARY_ELECTRICAL_APPLIANCE_FILE_NAME);
+        readElectricalAppliancesFromFile(
+                view.getString(GlobalConstants.SOURCE_ELECTRICAL_APPLIANCE_FILE_NAME));
+        readPortableElectricalAppliancesFromFile(
+                view.getString(GlobalConstants.SOURCE_PORTABLE_ELECTRICAL_APPLIANCE_FILE_NAME));
+        readStationaryElectricalAppliancesFromFile(
+                view.getString(GlobalConstants.SOURCE_STATIONARY_ELECTRICAL_APPLIANCE_FILE_NAME));
     }
 
     private void findElectricityAppliance() {
@@ -57,11 +62,11 @@ public class Controller {
         parameters.add(new Pair(GlobalConstants.SEARCH_PORTABLE_ELECTRICAL_APPLIANCE_CHARGE_LEVEL, "75"));
 
         view.printMessage(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_STRING_DELIMITER +
-                GlobalConstants.SEARCH_FILTER);
+                view.getString(GlobalConstants.SEARCH_FILTER));
         for(Pair<String, String> parameter : parameters)
             view.printMessage(parameter.getKey() + ": " + parameter.getValue());
         view.printMessage(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_STRING_DELIMITER +
-                GlobalConstants.SEARCH_RESULTS);
+                view.getString(GlobalConstants.SEARCH_RESULTS));
     }
 
     private void countTotalCapacity() {
@@ -70,10 +75,10 @@ public class Controller {
             if (electricalAppliance.isPlugIn()) totalCapacity += electricalAppliance.getCapacity();
 
         view.printMessage(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_STRING_DELIMITER +
-                GlobalConstants.VIEW_TOTAL_CAPACITY +
+                view.getString(GlobalConstants.VIEW_TOTAL_CAPACITY) +
                 totalCapacity +
                 GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION +
-                GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_CAPACITY_UNIT);
+                view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_CAPACITY_UNIT));
     }
 
     private void readStationaryElectricalAppliancesFromFile(String fileName) {
@@ -111,6 +116,13 @@ public class Controller {
 
     private ElectricalAppliance getElectricalAppliance(String stringFromFile){
         ElectricalAppliance electricalAppliance = new ElectricalAppliance();
+        electricalAppliance
+                .setViewCapacity(view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_CAPACITY),
+                        view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_CAPACITY_UNIT))
+                .setViewTitle(view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TITLE))
+                .setViewPlug( view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_PLUG_IN),
+                        view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_PLUG_OUT));
+
         if (stringFromFile.split(";").length != 3) exit(1);
         electricalAppliance.setTitle(stringFromFile.split(";")[0])
                 .setCapacity(Integer.decode(stringFromFile.split(";")[1]))
@@ -120,6 +132,14 @@ public class Controller {
 
     private PortableElectricalAppliances getPortableElectricalAppliance(String stringFromFile){
         PortableElectricalAppliances portableElectricalAppliance = new PortableElectricalAppliances();
+        portableElectricalAppliance
+                .setViewChargeLevel(view.getString(
+                        GlobalConstants.VIEW_PORTABLE_ELECTRICAL_APPLIANCE_CHARGE_LEVEL))
+                .setViewCapacity(view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_CAPACITY),
+                        view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_CAPACITY_UNIT))
+                .setViewTitle(view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TITLE))
+                .setViewPlug( view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_PLUG_IN),
+                        view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_PLUG_OUT));
         if (stringFromFile.split(";").length != 4) exit(1);
         portableElectricalAppliance.setTitle(stringFromFile.split(";")[0])
                 .setCapacity(Integer.decode(stringFromFile.split(";")[1]))
@@ -131,6 +151,13 @@ public class Controller {
 
     private StationaryElectricalAppliance getStationaryElectricalAppliance(String stringFromFile){
         StationaryElectricalAppliance stationaryElectricalAppliance = new StationaryElectricalAppliance();
+        stationaryElectricalAppliance
+                .setViewDimensions(view.getString(GlobalConstants.VIEW_STATIONARY_ELECTRICAL_APPLIANCE_DIMENSIONS))
+                .setViewCapacity(view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_CAPACITY),
+                        view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_CAPACITY_UNIT))
+                .setViewTitle(view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TITLE))
+                .setViewPlug( view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_PLUG_IN),
+                        view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_PLUG_OUT));
         if (stringFromFile.split(";").length != 6) exit(1);
         stationaryElectricalAppliance.setTitle(stringFromFile.split(";")[0])
                 .setCapacity(Integer.decode(stringFromFile.split(";")[1]))
