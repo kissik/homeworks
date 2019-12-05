@@ -87,8 +87,8 @@ public class PortableElectricalAppliances extends ElectricalAppliance {
     @Override
     public boolean findByParameters(ArrayList<Pair<String, String>> parameters){
         for(Pair<String, String> parameter : parameters) {
-            if (parameter.getValue() == GlobalConstants.SEARCH_PORTABLE_ELECTRICAL_APPLIANCE_CHARGE_LEVEL)
-                if (Integer.valueOf(parameter.getKey()) != chargeLevel) return false;
+            if (parameter.getKey() == GlobalConstants.SEARCH_PORTABLE_ELECTRICAL_APPLIANCE_CHARGE_LEVEL)
+                if (Integer.valueOf(parameter.getValue()) != chargeLevel) return false;
         }
         return super.findByParameters(parameters) && true;
     }

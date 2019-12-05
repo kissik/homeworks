@@ -12,7 +12,8 @@ public interface GlobalConstants {
     String DIMENSION_STRING_DELIMITER = " * ";
 
     String VIEW_ELECTRICAL_APPLIANCE_TITLE = "Title:";
-    String VIEW_ELECTRICAL_APPLIANCE_CAPACITY = "Capacity, kilowatt/hour:";
+    String VIEW_ELECTRICAL_APPLIANCE_CAPACITY = "Capacity:";
+    String VIEW_ELECTRICAL_APPLIANCE_CAPACITY_UNIT = "kilowatt/hour";
     String VIEW_ELECTRICAL_APPLIANCE_PLUG_IN = "Plug in";
     String VIEW_ELECTRICAL_APPLIANCE_PLUG_OUT = "Plug out";
 
@@ -34,6 +35,8 @@ public interface GlobalConstants {
     String SOURCE_STATIONARY_ELECTRICAL_APPLIANCE_FILE_NAME =
             "/home/irochka/project/temp/java/homeworks/ElectricalAppliances/target/classes/StationaryElectricalAppliances.txt";
 
+    String SEARCH_FILTER = "Filters:";
+    String SEARCH_RESULTS = "Results:";
     String SEARCH_ELECTRICAL_APPLIANCE_CAPACITY = "capacity";
     String SEARCH_ELECTRICAL_APPLIANCE_PLUG_IN = "plugIn";
     String SEARCH_ELECTRICAL_APPLIANCE_TITLE = "title";

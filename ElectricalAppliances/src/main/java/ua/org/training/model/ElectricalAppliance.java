@@ -136,6 +136,8 @@ public class ElectricalAppliance implements Comparable<ElectricalAppliance> {
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
                 .append(capacity)
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
+                .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_CAPACITY_UNIT)
+                .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
                 .append(EnergyLabel.getLabel(capacity))
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_STRING_DELIMITER)
                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TABULATION)
@@ -161,13 +163,14 @@ public class ElectricalAppliance implements Comparable<ElectricalAppliance> {
      * @return          true if object is satisfy the condition, otherwise - false
      */
     public boolean findByParameters(ArrayList<Pair<String, String>> parameters){
+
         for(Pair<String, String> parameter : parameters) {
-            if (parameter.getValue() == GlobalConstants.SEARCH_ELECTRICAL_APPLIANCE_TITLE)
-                if (parameter.getKey().equals(title) == false) return false;
-            if (parameter.getValue() == GlobalConstants.SEARCH_ELECTRICAL_APPLIANCE_CAPACITY)
-                if (Integer.valueOf(parameter.getKey()) != capacity) return false;
-            if (parameter.getValue() == GlobalConstants.SEARCH_ELECTRICAL_APPLIANCE_PLUG_IN)
-                if (Boolean.valueOf(parameter.getKey()) != plugIn) return false;
+            if ((parameter.getKey() == GlobalConstants.SEARCH_ELECTRICAL_APPLIANCE_TITLE)
+                    && (!parameter.getValue().equals(title))) return false;
+            if ((parameter.getKey() == GlobalConstants.SEARCH_ELECTRICAL_APPLIANCE_CAPACITY)
+                    && (Integer.valueOf(parameter.getValue()) != capacity)) return false;
+            if ((parameter.getKey() == GlobalConstants.SEARCH_ELECTRICAL_APPLIANCE_PLUG_IN)
+                    && (Boolean.valueOf(parameter.getValue()) != plugIn)) return false;
         }
         return true;
     }
