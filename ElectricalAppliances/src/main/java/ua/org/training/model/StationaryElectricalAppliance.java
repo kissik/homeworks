@@ -3,7 +3,7 @@ package ua.org.training.model;
 import javafx.util.Pair;
 import ua.org.training.view.GlobalConstants;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * StationaryElectricalAppliance is the class for
@@ -102,16 +102,16 @@ public class StationaryElectricalAppliance extends ElectricalAppliance {
      * @return          true if object is satisfy the condition, otherwise - false
      */
     @Override
-    public boolean findByParameters(ArrayList<Pair<String, String>> parameters){
+    public boolean findByParameters(List<Pair<String, String>> parameters){
         for(Pair<String, String> parameter : parameters) {
             if (parameter.getKey().equals(GlobalConstants.SEARCH_STATIONARY_ELECTRICAL_APPLIANCE_WIDTH))
-                if (Integer.valueOf(parameter.getValue()) != dimensions.getWidth()) return false;
+                if (Integer.parseInt(parameter.getValue()) != dimensions.getWidth()) return false;
             if (parameter.getKey().equals(GlobalConstants.SEARCH_STATIONARY_ELECTRICAL_APPLIANCE_HEIGHT))
-                if (Integer.valueOf(parameter.getValue()) != dimensions.getHeight()) return false;
+                if (Integer.parseInt(parameter.getValue()) != dimensions.getHeight()) return false;
             if (parameter.getKey().equals(GlobalConstants.SEARCH_STATIONARY_ELECTRICAL_APPLIANCE_DEPTH))
-                if (Integer.valueOf(parameter.getValue()) != dimensions.getDepth()) return false;
+                if (Integer.parseInt(parameter.getValue()) != dimensions.getDepth()) return false;
         }
-        return super.findByParameters(parameters) && true;
+        return super.findByParameters(parameters);
     }
 
 }

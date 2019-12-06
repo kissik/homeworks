@@ -3,7 +3,7 @@ package ua.org.training.model;
 import javafx.util.Pair;
 import ua.org.training.view.GlobalConstants;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <p>PortableElectricalAppliances is the class for
@@ -44,7 +44,7 @@ public class PortableElectricalAppliances extends ElectricalAppliance {
     }
 
     public PortableElectricalAppliances setViewChargeLevel(String viewChargeLevel){
-        map.add(new Pair("chargeLevel",viewChargeLevel));
+        map.add(new Pair<>("chargeLevel",viewChargeLevel));
         return this;
     }
 
@@ -90,11 +90,11 @@ public class PortableElectricalAppliances extends ElectricalAppliance {
      * @return          true if object is satisfy the condition, otherwise - false
      */
     @Override
-    public boolean findByParameters(ArrayList<Pair<String, String>> parameters){
+    public boolean findByParameters(List<Pair<String, String>> parameters){
         for(Pair<String, String> parameter : parameters) {
             if (parameter.getKey().equals(GlobalConstants.SEARCH_PORTABLE_ELECTRICAL_APPLIANCE_CHARGE_LEVEL))
-                if (Integer.valueOf(parameter.getValue()) != chargeLevel) return false;
+                if (Integer.parseInt(parameter.getValue()) != chargeLevel) return false;
         }
-        return super.findByParameters(parameters) && true;
+        return super.findByParameters(parameters);
     }
 }

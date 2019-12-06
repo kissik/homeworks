@@ -15,13 +15,14 @@ import ua.org.training.model.ElectricalAppliance;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 import static java.lang.System.exit;
 
 public class Controller {
     private View view;
-    private ArrayList<ElectricalAppliance> electricalAppliancesArrayList;
-    private ArrayList<Pair<String, String>> parameters; // -->> model
+    private List<ElectricalAppliance> electricalAppliancesArrayList;
+    private List<Pair<String, String>> parameters;
 
     public Controller(View view) {
         this.view = view;
@@ -83,7 +84,7 @@ public class Controller {
 
     private void readStationaryElectricalAppliancesFromFile(String fileName) {
         UtilityController utilityController = new UtilityController();
-        ArrayList<String> array = utilityController
+        List<String> array = utilityController
                 .getLines(fileName);
         for(String string : array){
             electricalAppliancesArrayList.add(getStationaryElectricalAppliance(string));
@@ -92,7 +93,7 @@ public class Controller {
 
     private void readPortableElectricalAppliancesFromFile(String fileName) {
         UtilityController utilityController = new UtilityController();
-        ArrayList<String> array = utilityController
+        List<String> array = utilityController
                 .getLines(fileName);
         for(String string : array){
             electricalAppliancesArrayList.add(getPortableElectricalAppliance(string));
@@ -101,7 +102,7 @@ public class Controller {
 
     private void readElectricalAppliancesFromFile(String fileName) {
         UtilityController utilityController = new UtilityController();
-        ArrayList<String> array = utilityController
+        List<String> array = utilityController
                 .getLines(fileName);
         for(String string : array){
             electricalAppliancesArrayList.add(getElectricalAppliance(string));

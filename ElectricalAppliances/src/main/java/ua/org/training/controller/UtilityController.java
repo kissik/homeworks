@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <p>UtilityController is the class for
@@ -14,8 +15,8 @@ import java.util.ArrayList;
 public class UtilityController {
     private BufferedReader reader;
 
-    public ArrayList<String> getLines(String fileName){
-        ArrayList<String> array = new ArrayList<>();
+    public List<String> getLines(String fileName){
+        List<String> array = new ArrayList<>();
         try {
             reader = new BufferedReader(new FileReader(fileName));
             String line = reader.readLine();

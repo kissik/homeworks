@@ -4,6 +4,7 @@ import javafx.util.Pair;
 import ua.org.training.view.GlobalConstants;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <p>ElectricalAppliances is the basic class for
@@ -15,25 +16,25 @@ import java.util.ArrayList;
 
 public class ElectricalAppliance implements Comparable<ElectricalAppliance> {
 
-    protected boolean plugIn;
-    protected int capacity;
-    protected String title; //private
-    protected ArrayList<Pair<String, String>> map;//delete
+    private boolean plugIn;
+    private int capacity;
+    private String title; //private
+    List<Pair<String, String>> map;//delete
 
     public ElectricalAppliance setViewTitle(String viewTitle){
-        map.add(new Pair("title",viewTitle));
+        map.add(new Pair<>("title",viewTitle));
         return this;
     }
 
     public ElectricalAppliance setViewCapacity(String viewCapacity, String viewCapacityUnit){
-        map.add(new Pair("capacity",viewCapacity));
-        map.add(new Pair("capacityUnit",viewCapacityUnit));
+        map.add(new Pair<>("capacity",viewCapacity));
+        map.add(new Pair<>("capacityUnit",viewCapacityUnit));
         return this;
     }
 
     public ElectricalAppliance setViewPlug(String viewPlugIn, String viewPlugOut){
-        map.add(new Pair("plugIn",viewPlugIn));
-        map.add(new Pair("plugOut",viewPlugOut));
+        map.add(new Pair<>("plugIn",viewPlugIn));
+        map.add(new Pair<>("plugOut",viewPlugOut));
         return this;
     }
 
@@ -185,15 +186,15 @@ public class ElectricalAppliance implements Comparable<ElectricalAppliance> {
      * <p>The method for checking if object is satisfy the condition</p>
      * @return          true if object is satisfy the condition, otherwise - false
      */
-    public boolean findByParameters(ArrayList<Pair<String, String>> parameters){
+    public boolean findByParameters(List<Pair<String, String>> parameters){
 
         for(Pair<String, String> parameter : parameters) {
             if ((parameter.getKey().equals(GlobalConstants.SEARCH_ELECTRICAL_APPLIANCE_TITLE))
                     && (!parameter.getValue().equals(title))) return false;
             if ((parameter.getKey().equals(GlobalConstants.SEARCH_ELECTRICAL_APPLIANCE_CAPACITY))
-                    && (Integer.valueOf(parameter.getValue()) != capacity)) return false;
+                    && (Integer.parseInt(parameter.getValue()) != capacity)) return false;
             if ((parameter.getKey().equals(GlobalConstants.SEARCH_ELECTRICAL_APPLIANCE_PLUG_IN))
-                    && (Boolean.valueOf(parameter.getValue()) != plugIn)) return false;
+                    && (Boolean.parseBoolean(parameter.getValue()) != plugIn)) return false;
         }
         return true;
     }
