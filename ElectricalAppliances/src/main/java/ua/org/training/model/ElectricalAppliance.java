@@ -177,9 +177,7 @@ public class ElectricalAppliance implements Comparable<ElectricalAppliance> {
      * @return          integer value of a electrical appliance information in human readable format
      */
     public int compareTo(ElectricalAppliance electricalAppliance) {
-        return this.capacity > electricalAppliance.capacity
-                ? 1
-                : (this.capacity < electricalAppliance.capacity ? -1 : 0);
+        return Integer.compare(this.capacity, electricalAppliance.capacity);
     }
 
     /**

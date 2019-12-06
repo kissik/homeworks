@@ -56,11 +56,11 @@ public class Controller {
             if (electricalAppliance.findByParameters(parameters)) view.printMessage(electricalAppliance.toString());
     }
     private void addFilterParameters(){
-        //parameters.add(new Pair(GlobalConstants.SEARCH_ELECTRICAL_APPLIANCE_TITLE, "Washing Machine"));
-        //parameters.add(new Pair(GlobalConstants.SEARCH_ELECTRICAL_APPLIANCE_CAPACITY, "15"));
-        parameters.add(new Pair(GlobalConstants.SEARCH_ELECTRICAL_APPLIANCE_PLUG_IN, "false"));
-        parameters.add(new Pair(GlobalConstants.SEARCH_STATIONARY_ELECTRICAL_APPLIANCE_WIDTH, "70"));
-        parameters.add(new Pair(GlobalConstants.SEARCH_PORTABLE_ELECTRICAL_APPLIANCE_CHARGE_LEVEL, "75"));
+        //parameters.add(new Pair<>(GlobalConstants.SEARCH_ELECTRICAL_APPLIANCE_TITLE, "Washing Machine"));
+        //parameters.add(new Pair<>(GlobalConstants.SEARCH_ELECTRICAL_APPLIANCE_CAPACITY, "15"));
+        parameters.add(new Pair<>(GlobalConstants.SEARCH_ELECTRICAL_APPLIANCE_PLUG_IN, "false"));
+        parameters.add(new Pair<>(GlobalConstants.SEARCH_STATIONARY_ELECTRICAL_APPLIANCE_WIDTH, "70"));
+        parameters.add(new Pair<>(GlobalConstants.SEARCH_PORTABLE_ELECTRICAL_APPLIANCE_CHARGE_LEVEL, "75"));
 
         view.printMessage(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_STRING_DELIMITER +
                 view.getString(GlobalConstants.SEARCH_FILTER));
