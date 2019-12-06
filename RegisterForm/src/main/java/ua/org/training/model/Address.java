@@ -14,40 +14,45 @@ public class Address {
         return apartment;
     }
 
-    public void setApartment(String apartment) {
+    public Address setApartment(String apartment) {
         this.apartment = apartment;
+        return this;
     }
 
     public String getIndex() {
         return index;
     }
 
-    public void setIndex(String index) {
+    public Address setIndex(String index) {
         this.index = index;
+        return this;
     }
 
     public String getCity() {
         return city;
     }
 
-    public void setCity(String city) {
+    public Address setCity(String city) {
         this.city = city;
+        return this;
     }
 
     public String getHouse() {
         return house;
     }
 
-    public void setHouse(String house) {
+    public Address setHouse(String house) {
         this.house = house;
+        return this;
     }
 
     public String getStreet() {
         return street;
     }
 
-    public void setStreet(String street) {
+    public Address setStreet(String street) {
         this.street = street;
+        return this;
     }
 
     @Override

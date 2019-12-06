@@ -93,17 +93,17 @@ public class Controller {
         Address address = new Address();
         address.setIndex(inputStringValueWithScanner(sc,
                 view.getString(STRING_INPUT_ADDRESS_INDEX),
-                view.getString(PATTERN_INPUT_ADDRESS_INDEX)));
-        address.setCity(inputStringValueWithScanner(sc,
+                view.getString(PATTERN_INPUT_ADDRESS_INDEX)))
+                .setCity(inputStringValueWithScanner(sc,
                 view.getString(STRING_INPUT_ADDRESS_CITY),
-                view.getString(PATTERN_INPUT_ADDRESS_CITY)));
-        address.setStreet(inputStringValueWithScanner(sc,
+                view.getString(PATTERN_INPUT_ADDRESS_CITY)))
+                .setStreet(inputStringValueWithScanner(sc,
                 view.getString(STRING_INPUT_ADDRESS_STREET),
-                view.getString(PATTERN_INPUT_ADDRESS_STREET)));
-        address.setHouse(inputStringValueWithScanner(sc,
+                view.getString(PATTERN_INPUT_ADDRESS_STREET)))
+                .setHouse(inputStringValueWithScanner(sc,
                 view.getString(STRING_INPUT_ADDRESS_HOUSE),
-                view.getString(PATTERN_INPUT_ADDRESS_HOUSE)));
-        address.setApartment(inputStringValueWithScanner(sc,
+                view.getString(PATTERN_INPUT_ADDRESS_HOUSE)))
+                .setApartment(inputStringValueWithScanner(sc,
                 view.getString(STRING_INPUT_ADDRESS_APARTMENT),
                 view.getString(PATTERN_INPUT_ADDRESS_APARTMENT)));
         return address;
