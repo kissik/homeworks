@@ -30,12 +30,12 @@ public class TestElectricalAppliances {
 
     @Test
     public void testCapacity(){
-        Assert.assertTrue(electricalAppliance.getCapacity() == CAPACITY);
+        Assert.assertEquals(electricalAppliance.getCapacity(), CAPACITY);
     }
 
     @Test
     public void testHashCode(){
-        Assert.assertTrue(electricalAppliance.hashCode() == GlobalConstants.PRIME_NUMBER * CAPACITY);
+        Assert.assertEquals(electricalAppliance.hashCode(), GlobalConstants.PRIME_NUMBER * CAPACITY);
     }
 
 }

@@ -20,10 +20,10 @@ public class TestPortableElectricalAppliances {
     }
     @Test
     public void testChargeLevel(){
-        Assert.assertTrue(portableElectricalAppliances.getChargeLevel() == CHARGE_LEVEL);
+        Assert.assertEquals(portableElectricalAppliances.getChargeLevel(), CHARGE_LEVEL);
     }
     @Test
     public void testHashCode(){
-        Assert.assertTrue(portableElectricalAppliances.hashCode() == CHARGE_LEVEL);
+        Assert.assertEquals(portableElectricalAppliances.hashCode(), CHARGE_LEVEL);
     }
 }

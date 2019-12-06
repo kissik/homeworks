@@ -11,7 +11,7 @@ public class TestStationaryElectricalAppliance {
     private static final int DIMENSION_HEIGHT = 2;
     private static final int DIMENSION_DEPTH = 3;
 
-    public static StationaryElectricalAppliance stationaryElectricalAppliance;
+    private static StationaryElectricalAppliance stationaryElectricalAppliance;
 
     @BeforeClass
     public static void testInit(){
@@ -27,12 +27,12 @@ public class TestStationaryElectricalAppliance {
     @Test
     public void testDimensionsHashCode(){
         int hashCode = (DIMENSION_WIDTH * GlobalConstants.PRIME_NUMBER + DIMENSION_HEIGHT) * GlobalConstants.PRIME_NUMBER + DIMENSION_DEPTH;
-        Assert.assertTrue(stationaryElectricalAppliance.getDimensions()
-                .hashCode() == hashCode);
+        Assert.assertEquals(stationaryElectricalAppliance.getDimensions()
+                .hashCode(), hashCode);
     }
     @Test
     public void testHashCode(){
         int hashCode = stationaryElectricalAppliance.getDimensions().hashCode();
-        Assert.assertTrue(stationaryElectricalAppliance.hashCode() == hashCode);
+        Assert.assertEquals(stationaryElectricalAppliance.hashCode(), hashCode);
     }
 }
