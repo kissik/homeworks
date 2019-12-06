@@ -21,7 +21,7 @@ import static java.lang.System.exit;
 public class Controller {
     private View view;
     private ArrayList<ElectricalAppliance> electricalAppliancesArrayList;
-    private ArrayList<Pair<String, String>> parameters;
+    private ArrayList<Pair<String, String>> parameters; // -->> model
 
     public Controller(View view) {
         this.view = view;
@@ -40,7 +40,7 @@ public class Controller {
         findElectricityAppliance();
     }
 
-    private void readElectricalAppliances(){
+    private void readElectricalAppliances(){ // --
         readElectricalAppliancesFromFile(
                 view.getString(GlobalConstants.SOURCE_ELECTRICAL_APPLIANCE_FILE_NAME));
         readPortableElectricalAppliancesFromFile(

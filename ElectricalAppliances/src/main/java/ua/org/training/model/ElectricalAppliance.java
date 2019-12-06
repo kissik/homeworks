@@ -17,8 +17,8 @@ public class ElectricalAppliance implements Comparable<ElectricalAppliance> {
 
     protected boolean plugIn;
     protected int capacity;
-    protected String title;
-    protected ArrayList<Pair<String, String>> map;
+    protected String title; //private
+    protected ArrayList<Pair<String, String>> map;//delete
 
     public ElectricalAppliance setViewTitle(String viewTitle){
         map.add(new Pair("title",viewTitle));
@@ -164,9 +164,9 @@ public class ElectricalAppliance implements Comparable<ElectricalAppliance> {
                 .toString();
     }
 
-    protected String getViewString(String key){
+    String getViewString(String key){
         for(Pair<String, String> pair : map){
-            if (pair.getKey()==key) return pair.getValue();
+            if (pair.getKey().equals(key)) return pair.getValue();
         }
         return GlobalConstants.DEFAULT_STRING;
     }
@@ -188,11 +188,11 @@ public class ElectricalAppliance implements Comparable<ElectricalAppliance> {
     public boolean findByParameters(ArrayList<Pair<String, String>> parameters){
 
         for(Pair<String, String> parameter : parameters) {
-            if ((parameter.getKey() == GlobalConstants.SEARCH_ELECTRICAL_APPLIANCE_TITLE)
+            if ((parameter.getKey().equals(GlobalConstants.SEARCH_ELECTRICAL_APPLIANCE_TITLE))
                     && (!parameter.getValue().equals(title))) return false;
-            if ((parameter.getKey() == GlobalConstants.SEARCH_ELECTRICAL_APPLIANCE_CAPACITY)
+            if ((parameter.getKey().equals(GlobalConstants.SEARCH_ELECTRICAL_APPLIANCE_CAPACITY))
                     && (Integer.valueOf(parameter.getValue()) != capacity)) return false;
-            if ((parameter.getKey() == GlobalConstants.SEARCH_ELECTRICAL_APPLIANCE_PLUG_IN)
+            if ((parameter.getKey().equals(GlobalConstants.SEARCH_ELECTRICAL_APPLIANCE_PLUG_IN))
                     && (Boolean.valueOf(parameter.getValue()) != plugIn)) return false;
         }
         return true;

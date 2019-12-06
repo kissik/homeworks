@@ -104,11 +104,11 @@ public class StationaryElectricalAppliance extends ElectricalAppliance {
     @Override
     public boolean findByParameters(ArrayList<Pair<String, String>> parameters){
         for(Pair<String, String> parameter : parameters) {
-            if (parameter.getKey() == GlobalConstants.SEARCH_STATIONARY_ELECTRICAL_APPLIANCE_WIDTH)
+            if (parameter.getKey().equals(GlobalConstants.SEARCH_STATIONARY_ELECTRICAL_APPLIANCE_WIDTH))
                 if (Integer.valueOf(parameter.getValue()) != dimensions.getWidth()) return false;
-            if (parameter.getKey() == GlobalConstants.SEARCH_STATIONARY_ELECTRICAL_APPLIANCE_HEIGHT)
+            if (parameter.getKey().equals(GlobalConstants.SEARCH_STATIONARY_ELECTRICAL_APPLIANCE_HEIGHT))
                 if (Integer.valueOf(parameter.getValue()) != dimensions.getHeight()) return false;
-            if (parameter.getKey() == GlobalConstants.SEARCH_STATIONARY_ELECTRICAL_APPLIANCE_DEPTH)
+            if (parameter.getKey().equals(GlobalConstants.SEARCH_STATIONARY_ELECTRICAL_APPLIANCE_DEPTH))
                 if (Integer.valueOf(parameter.getValue()) != dimensions.getDepth()) return false;
         }
         return super.findByParameters(parameters) && true;
