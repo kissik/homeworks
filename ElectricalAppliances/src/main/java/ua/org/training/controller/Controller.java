@@ -12,7 +12,7 @@ import ua.org.training.model.ElectricalAppliance;
  * @author      <a href="mailto:iryna.v.afanasieva@gmail.com">Ira Afanasieva</a>
  * @version     1.0, 12/4/2019
  */
-import java.awt.*;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -114,59 +114,56 @@ public class Controller {
             view.printMessage(electricalAppliance.toString());
     }
 
-    private ElectricalAppliance getElectricalAppliance(String stringFromFile){
-        ElectricalAppliance electricalAppliance = new ElectricalAppliance();
+    private void initElectricalAppliance(ElectricalAppliance electricalAppliance, String stringFromFile){
         electricalAppliance
                 .setViewCapacity(view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_CAPACITY),
                         view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_CAPACITY_UNIT))
                 .setViewTitle(view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TITLE))
                 .setViewPlug( view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_PLUG_IN),
-                        view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_PLUG_OUT));
-
-        if (stringFromFile.split(";").length != 3) exit(1);
-        electricalAppliance.setTitle(stringFromFile.split(";")[0])
+                        view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_PLUG_OUT))
+                .setTitle(stringFromFile.split(";")[0])
                 .setCapacity(Integer.decode(stringFromFile.split(";")[1]))
                 .setPlugIn(Boolean.valueOf(stringFromFile.split(";")[2]));
+    }
+
+    private ElectricalAppliance getElectricalAppliance(String stringFromFile){
+        ElectricalAppliance electricalAppliance = new ElectricalAppliance();
+        if (stringFromFile.split(";").length != 3) exit(1);
+
+        initElectricalAppliance(electricalAppliance, stringFromFile);
         return electricalAppliance;
     }
 
     private PortableElectricalAppliances getPortableElectricalAppliance(String stringFromFile){
         PortableElectricalAppliances portableElectricalAppliance = new PortableElectricalAppliances();
+        if (stringFromFile.split(";").length != 4) exit(2);
+
+        initElectricalAppliance(portableElectricalAppliance, stringFromFile);
+
         portableElectricalAppliance
                 .setViewChargeLevel(view.getString(
                         GlobalConstants.VIEW_PORTABLE_ELECTRICAL_APPLIANCE_CHARGE_LEVEL))
-                .setViewCapacity(view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_CAPACITY),
-                        view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_CAPACITY_UNIT))
-                .setViewTitle(view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TITLE))
-                .setViewPlug( view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_PLUG_IN),
-                        view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_PLUG_OUT));
-        if (stringFromFile.split(";").length != 4) exit(1);
-        portableElectricalAppliance.setTitle(stringFromFile.split(";")[0])
-                .setCapacity(Integer.decode(stringFromFile.split(";")[1]))
-                .setPlugIn(Boolean.valueOf(stringFromFile.split(";")[2]));
-        portableElectricalAppliance.setChargeLevel(Integer.decode(stringFromFile.split(";")[3]));
+                .setChargeLevel(Integer.decode(stringFromFile.split(";")[3]));
 
         return portableElectricalAppliance;
     }
 
     private StationaryElectricalAppliance getStationaryElectricalAppliance(String stringFromFile){
         StationaryElectricalAppliance stationaryElectricalAppliance = new StationaryElectricalAppliance();
-        stationaryElectricalAppliance
-                .setViewDimensions(view.getString(GlobalConstants.VIEW_STATIONARY_ELECTRICAL_APPLIANCE_DIMENSIONS))
-                .setViewCapacity(view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_CAPACITY),
-                        view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_CAPACITY_UNIT))
-                .setViewTitle(view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_TITLE))
-                .setViewPlug( view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_PLUG_IN),
-                        view.getString(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_PLUG_OUT));
-        if (stringFromFile.split(";").length != 6) exit(1);
-        stationaryElectricalAppliance.setTitle(stringFromFile.split(";")[0])
-                .setCapacity(Integer.decode(stringFromFile.split(";")[1]))
-                .setPlugIn(Boolean.valueOf(stringFromFile.split(";")[2]));
+        if (stringFromFile.split(";").length != 6) exit(3);
+
+        initElectricalAppliance(stationaryElectricalAppliance, stringFromFile);
+
         Dimensions dimensions = new Dimensions(
                 Integer.decode(stringFromFile.split(";")[3]),
                 Integer.decode(stringFromFile.split(";")[4]),
                 Integer.decode(stringFromFile.split(";")[5]));
-        stationaryElectricalAppliance.setDimensions(dimensions);
+
+        stationaryElectricalAppliance
+                .setViewDimensions(
+                        view.getString(
+                                GlobalConstants.VIEW_STATIONARY_ELECTRICAL_APPLIANCE_DIMENSIONS))
+                .setDimensions(dimensions);
 
         return stationaryElectricalAppliance;
     }
