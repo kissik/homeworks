@@ -43,7 +43,7 @@ public enum EnergyLabel {
 
     public static String getLabel(int capacity){
         for(EnergyLabel energyLabel : EnergyLabel.values()){
-            if ((energyLabel.minimumCapacity() < capacity) && (capacity < energyLabel.maximumCapacity()))
+            if ((energyLabel.minimumCapacity() <= capacity) && (capacity <= energyLabel.maximumCapacity()))
                 return energyLabel.label();
         }
         return G.label();
