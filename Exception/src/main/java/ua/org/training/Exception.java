@@ -6,10 +6,12 @@ public class Exception {
                 // f(null);
                 System.out.println("out".length() + " one more".length() + " string");
                 //System.out.println(sqr(2.0));
-                System.out.println("result = " + sqr_nothing(0.));
+                //System.out.println("result = " + sqr_nothing(0.));
+                System.out.println("area = " + area(-20, 30));
                 throw new Error();
         }
-        public static void f(NullPointerException e) {
+
+        private static void f(NullPointerException e) {
                 try {
                         throw e;
                 } catch (NullPointerException npe) {
@@ -35,5 +37,14 @@ public class Exception {
 
         public static double sqr_nothing(double arg) {
                 throw new RuntimeException();
+        }
+
+        private static int area(int width, int height) {
+                if (width < 0 || height < 0) {
+                        //return -1;
+                        //System.exit(3);
+                        throw new IllegalArgumentException("Negative sizes: w = " + width + ", h = " + height);
+                }
+                return width * height;
         }
 }
