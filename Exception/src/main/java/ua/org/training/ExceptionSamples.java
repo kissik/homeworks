@@ -1,8 +1,25 @@
 package ua.org.training;
 
+import java.io.EOFException;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+class Parent {
+        public void f() throws IOException, InterruptedException {
+                return;
+        }
+}
+
+class Child extends Parent {
+        @Override
+        public void f() throws FileNotFoundException {
+                return;
+        }
+}
+
 public class ExceptionSamples {
 
-        public static void main(String[] args) {
+        public static void main(String[] args) throws IOException, InterruptedException{
              /*   // f(null);
                 System.out.println("out".length() + " one more".length() + " string");
                 //System.out.println(sqr(2.0));
@@ -21,7 +38,18 @@ public class ExceptionSamples {
                         } catch (RuntimeException e) {
                         }
                  */
-                fk();
+                f0();
+                f1();
+                f2();
+        }
+        public static void f0() throws EOFException {
+                return;
+        }
+        public static void f1() throws FileNotFoundException {
+                return;
+        }
+        public static void f2() throws InterruptedException {
+                return;
         }
 
         public static void fk(){
