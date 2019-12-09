@@ -2,7 +2,7 @@ package ua.org.training;
 
 public class ExceptionSamples {
 
-        public static void main(String[] args) throws Exception {
+        public static void main(String[] args) {
              /*   // f(null);
                 System.out.println("out".length() + " one more".length() + " string");
                 //System.out.println(sqr(2.0));
@@ -15,7 +15,47 @@ public class ExceptionSamples {
                 System.err.println("#1.out");
 
               */
-                catchAllThrow();
+                /* Error: Child after Parent!
+                try {
+                        } catch (Exception e) {
+                        } catch (RuntimeException e) {
+                        }
+                 */
+                throwableVSexceptionRuntime();
+        }
+
+        private static void throwableVSexceptionRuntime(){
+                try {
+                        Throwable t = new Exception();
+                        throw t;
+                } catch (RuntimeException e) {
+                        System.err.println("catch RuntimeException");
+                } catch (Exception e) {
+                        System.err.println("catch Exception");
+                } catch (Throwable e) {
+                        System.err.println("catch Throwable");
+                }
+                System.err.println("next statement");
+        }
+
+        private static void theFirstMatch(){
+                try {
+                        throw new Exception();
+                } catch (RuntimeException e) {
+                        System.err.println("catch RuntimeException");
+                } catch (Exception e) {
+                        System.err.println("catch Exception");
+                } catch (Throwable e) {
+                        System.err.println("catch Throwable");
+                }
+                System.err.println("next statement");
+        }
+
+        private static void broAfterBroInAnyOrder(){
+                try {
+                } catch (Error e) {
+                } catch (RuntimeException e) {
+                }
         }
 
         private static void catchAllThrow(){
