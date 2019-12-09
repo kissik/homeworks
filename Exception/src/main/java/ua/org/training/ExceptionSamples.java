@@ -21,7 +21,48 @@ public class ExceptionSamples {
                         } catch (RuntimeException e) {
                         }
                  */
-                fd();
+                fg();
+        }
+
+        public static void fg(){
+                try {
+                        System.err.print(" 0 ");
+                        if (true) {throw new RuntimeException();}
+                        //sth went wrong and we didn't catch it
+                        System.err.print(" 1 ");
+                } catch(Error e) {
+                        System.err.print(" 2 ");
+                } finally {
+                        System.err.print(" 3 ");
+                }
+                System.err.print(" 4 ");
+        }
+
+        public static void ff(){
+                try {
+                        System.err.print(" 0 ");
+                        if (true) {throw new Error();}
+                        //this never happen
+                        System.err.print(" 1 ");
+                } catch(Error e) {
+                        System.err.print(" 2 ");
+                } finally {
+                        System.err.print(" 3 ");
+                }
+                System.err.print(" 4 ");
+        }
+
+        public static void fe(){
+                try {
+                        System.err.print(" 0 ");
+                        // everything is ok
+                        System.err.print(" 1 ");
+                } catch(Error e) {
+                        System.err.print(" 2 ");
+                } finally {
+                        System.err.print(" 3 ");
+                }
+                System.err.print(" 4 ");
         }
 
         private static int fa() {
