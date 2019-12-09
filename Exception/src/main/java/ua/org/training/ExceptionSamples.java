@@ -21,7 +21,86 @@ public class ExceptionSamples {
                         } catch (RuntimeException e) {
                         }
                  */
-                throwableVSexceptionRuntime();
+                fd();
+        }
+
+        private static int fa() {
+                try {
+                        throw new RuntimeException();
+                } finally {
+                        return 1;
+                }
+        }
+
+        private static int fb(){
+                try {
+                        return 0;
+                } finally {
+                        throw new RuntimeException();
+                }
+        }
+
+        private static int fc(){
+                try {
+                        throw new Error();
+                } finally {
+                        throw new RuntimeException();
+                }
+        }
+        /*
+                Lock lock = new ReentrantLock();
+                ...
+                lock.lock();
+                try {
+                    // some code
+                } finally {
+                    lock.unlock();
+                }
+
+                InputStream input = new FileInputStream("...");
+                try {
+                    // some code
+                } finally {
+                    input.close();
+                }
+
+        * */
+
+        private static void fd(){
+                        long rnd = System.currentTimeMillis();
+                        boolean finished = false;
+                        try {
+                                if (rnd % 3 == 0) {
+                                        throw new Error();
+                                } else if (rnd % 3 == 1) {
+                                        throw new RuntimeException();
+                                } else {
+                                        System.out.println("nothing at all");
+                                }
+                                finished = true;
+                        } finally {
+                                if (finished) {
+                                        System.out.println("nothing at all");
+                                } else {
+                                        System.out.println("was sth, but what is it?");
+                                }
+                        }
+        }
+
+        private static int tryFinally(){
+                try {
+                        System.err.println("try");
+                        if (true) return 1;
+                        //if (true) throw new RuntimeException();
+                        //System.exit(42);
+                        //Runtime.getRuntime().exit(42);
+                        //Runtime.getRuntime().halt(42);
+                } finally {
+                        System.err.println("finally");
+                        if (true) return 42;
+                }
+                System.err.println("more");
+                return 0;
         }
 
         private static void throwableVSexceptionRuntime(){
