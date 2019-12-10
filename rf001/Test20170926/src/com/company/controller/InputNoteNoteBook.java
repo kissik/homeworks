@@ -15,7 +15,6 @@ import static com.company.view.TextConstant.LOGIN_DATA;
 public class InputNoteNoteBook {
     private View view;
     private Scanner sc;
-
     private String firstName;
     private String login;
 
@@ -24,7 +23,7 @@ public class InputNoteNoteBook {
         this.sc = sc;
     }
 
-    public void inputNote() {
+    public InputNoteNoteBook inputNote() {
         UtilityController utilityController =
                 new UtilityController(sc, view);
         String str = (String.valueOf(View.bundle.getLocale()).equals("ua"))
@@ -36,5 +35,22 @@ public class InputNoteNoteBook {
         this.login =
                 utilityController.inputStringValueWithScanner
                         (LOGIN_DATA, REGEX_LOGIN);
+        return this;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
     }
 }

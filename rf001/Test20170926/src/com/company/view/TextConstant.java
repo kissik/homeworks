@@ -8,4 +8,8 @@ public interface TextConstant {
     String FIRST_NAME = "input.first.name.data";
     String WRONG_INPUT_DATA = "input.wrong.data";
     String LOGIN_DATA = "input.login.data";
+
+    String NEW_LINE = "\n";
+
+    int STRING_BUFFER = 1024;
 }
