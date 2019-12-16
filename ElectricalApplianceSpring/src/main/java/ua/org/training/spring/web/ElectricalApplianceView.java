@@ -1,14 +1,12 @@
 package ua.org.training.spring.web;
-import ua.org.training.spring.domain.entity.ElectricalAppliance;
 
 import java.nio.charset.StandardCharsets;
-import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
 /**
  * @author      <a href="mailto:iryna.v.afanasieva@gmail.com">Ira Afanasieva</a>
- * @version     1.0, 12/4/2019
+ * @version     1.0, 12/16/2019
  */
 public class ElectricalApplianceView {
 

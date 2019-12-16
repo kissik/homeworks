@@ -1,10 +1,13 @@
 package ua.org.training.spring.web;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import ua.org.training.spring.domain.ElectricalApplianceModel;
-import ua.org.training.spring.domain.entity.ElectricalAppliance;
 
+/**
+ * class ElectricalApplianceController
+ * @author      <a href="mailto:iryna.v.afanasieva@gmail.com">Ira Afanasieva</a>
+ * @version     1.0, 12/16/2019
+ */
 @Controller
 public class ElectricalApplianceController {
 
@@ -17,13 +20,9 @@ public class ElectricalApplianceController {
     }
 
     public void processUser() {
-        printCollection(
-                view.getString(GlobalConstants.SORTING_MESSAGES_BEFORE),
-                model);
+        printCollection(view.getString(GlobalConstants.SORTING_MESSAGES_BEFORE));
         model.sort();
-        printCollection(
-                view.getString(GlobalConstants.SORTING_MESSAGES_AFTER),
-                model);
+        printCollection(view.getString(GlobalConstants.SORTING_MESSAGES_AFTER));
         view.printMessage(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_STRING_DELIMITER +
                 view.getString(GlobalConstants.VIEW_TOTAL_CAPACITY) +
                 model.countTotalCapacity() +
@@ -33,8 +32,8 @@ public class ElectricalApplianceController {
                 view.getString(GlobalConstants.SEARCH_RESULTS)));
     }
 
-    private void printCollection(String sortingMessagesBefore, ElectricalApplianceModel model) {
-        view.printMessage(sortingMessagesBefore);
+    private void printCollection(String message) {
+        view.printMessage(message);
         view.printMessage(model.printCollection());
     }
 

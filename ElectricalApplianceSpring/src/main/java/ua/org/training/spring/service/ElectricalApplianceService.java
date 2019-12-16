@@ -4,6 +4,11 @@ import javafx.util.Pair;
 
 import java.util.List;
 
+/**
+ * interface ElectricalApplianceService
+ * @author      <a href="mailto:iryna.v.afanasieva@gmail.com">Ira Afanasieva</a>
+ * @version     1.0, 12/16/2019
+ */
 public interface ElectricalApplianceService {
 
     /**

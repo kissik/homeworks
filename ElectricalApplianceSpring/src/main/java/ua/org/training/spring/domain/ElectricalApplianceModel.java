@@ -9,6 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * class ElectricalApplianceModel
+ * @author      <a href="mailto:iryna.v.afanasieva@gmail.com">Ira Afanasieva</a>
+ * @version     1.0, 12/16/2019
+ */
 public class ElectricalApplianceModel {
 
     private List<ElectricalApplianceService> electricalAppliancesArrayList;
@@ -35,7 +40,7 @@ public class ElectricalApplianceModel {
         electricalAppliancesArrayList = electricalAppliancesArrayList
                 .stream()
                 .sorted(ElectricalApplianceService::compareTo)
-                .collect(Collectors.<ElectricalApplianceService>toList());
+                .collect(Collectors.toList());
 
     }
 
