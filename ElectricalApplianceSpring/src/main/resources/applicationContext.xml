@@ -44,12 +44,9 @@
         <constructor-arg name="depth" value="10"/>
     </bean>
 
-    <util:list id="peaList" list-class="java.util.ArrayList" value-type="ua.org.training.spring.domain.entity.PortableElectricalAppliance">
-          <ref bean = "pea1"/>
-          <ref bean = "pea2"/>
-    </util:list>
-
-    <util:list id="seaList" list-class="java.util.ArrayList" value-type="ua.org.training.spring.domain.entity.StationaryElectricalAppliance">
+    <util:list id="list" list-class="java.util.ArrayList">
+        <ref bean = "pea1"/>
+        <ref bean = "pea2"/>
         <ref bean = "sea1"/>
         <ref bean = "sea2"/>
     </util:list>

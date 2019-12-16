@@ -23,12 +23,8 @@ public class ElectricalApplianceModel {
         electricalAppliancesArrayList = new ArrayList<>();
         parameters = new ArrayList<>();
         List<ElectricalApplianceService> list =
-                (List<ElectricalApplianceService>) context.getBean("peaList", java.util.ArrayList.class);
+                (List<ElectricalApplianceService>) context.getBean("list", java.util.ArrayList.class);
         list.forEach(this::add);
-        list = (List<ElectricalApplianceService>)
-                        context.getBean("seaList", java.util.ArrayList.class);
-        list.forEach(this::add);
-
     }
 
     private void add(ElectricalApplianceService electricalAppliance){
@@ -36,12 +32,10 @@ public class ElectricalApplianceModel {
     }
 
     public void sort(){
-
         electricalAppliancesArrayList = electricalAppliancesArrayList
                 .stream()
                 .sorted(ElectricalApplianceService::compareTo)
                 .collect(Collectors.toList());
-
     }
 
     public int countTotalCapacity() {
@@ -61,7 +55,6 @@ public class ElectricalApplianceModel {
                         buffer
                                 .append(GlobalConstants.VIEW_ELECTRICAL_APPLIANCE_STRING_DELIMITER)
                                 .append(electricalAppliance.toString()));
-
         return buffer.toString();
     }
 
