@@ -29,7 +29,7 @@ public class MainSpring {
             default:  view = new ElectricalApplianceView(new Locale("en"));
         }
         ElectricalApplianceModel model = new ElectricalApplianceModel(context);
-
+        context.close();
         ElectricalApplianceController controller =
                 new ElectricalApplianceController(view, model);
         controller.processUser();
