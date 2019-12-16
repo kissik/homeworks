@@ -14,7 +14,7 @@ import java.util.List;
  * @version     1.0, 12/3/2019
  */
 
-public class ElectricalAppliance implements Comparable<ElectricalAppliance>, ElectricalApplianceService {
+public abstract class ElectricalAppliance implements Comparable<ElectricalAppliance>, ElectricalApplianceService {
 
     private boolean plugIn;
     private int capacity;
@@ -164,6 +164,7 @@ public class ElectricalAppliance implements Comparable<ElectricalAppliance>, Ele
      * <p>The method for checking if object is satisfy the condition</p>
      * @return          true if object is satisfy the condition, otherwise - false
      */
+    @Override
     public boolean findByParameters(List<Pair<String, String>> parameters){
 
         for(Pair<String, String> parameter : parameters) {
