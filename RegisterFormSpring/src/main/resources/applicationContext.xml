@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:util="http://www.springframework.org/schema/util"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+    <bean id="pea1"
+          class="ua.org.training.spring.domain.entity.PortableElectricalAppliance">
+        <constructor-arg name="title" value="Cell Phone"/>
+        <constructor-arg name="capacity" value="10"/>
+        <constructor-arg name="plugIn" value="false"/>
+        <constructor-arg name="chargeLevel" value="70"/>
+    </bean>
+    <bean id="pea2"
+          class="ua.org.training.spring.domain.entity.PortableElectricalAppliance">
+        <constructor-arg name="title" value="Tooth Brush"/>
+        <constructor-arg name="capacity" value="4"/>
+        <constructor-arg name="plugIn" value="false"/>
+        <constructor-arg name="chargeLevel" value="50"/>
+    </bean>
+
+    <bean id="sea1"
+          class="ua.org.training.spring.domain.entity.StationaryElectricalAppliance">
+        <constructor-arg name="title" value="Washing Machine"/>
+        <constructor-arg name="capacity" value="40"/>
+        <constructor-arg name="plugIn" value="false"/>
+        <constructor-arg name="width" value="60"/>
+        <constructor-arg name="height" value="60"/>
+        <constructor-arg name="depth" value="60"/>
+    </bean>
+    <bean id="sea2"
+          class="ua.org.training.spring.domain.entity.StationaryElectricalAppliance">
+        <constructor-arg name="title" value="TV sun"/>
+        <constructor-arg name="capacity" value="40"/>
+        <constructor-arg name="plugIn" value="true"/>
+        <constructor-arg name="width" value="120"/>
+        <constructor-arg name="height" value="60"/>
+        <constructor-arg name="depth" value="10"/>
+    </bean>
+
+    <util:list id="peaList" list-class="java.util.ArrayList" value-type="ua.org.training.spring.domain.entity.PortableElectricalAppliance">
+          <ref bean = "pea1"/>
+          <ref bean = "pea2"/>
+    </util:list>
+
+    <util:list id="seaList" list-class="java.util.ArrayList" value-type="ua.org.training.spring.domain.entity.StationaryElectricalAppliance">
+        <ref bean = "sea1"/>
+        <ref bean = "sea2"/>
+    </util:list>
+</beans>
