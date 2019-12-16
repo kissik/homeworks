@@ -19,15 +19,11 @@ public class ElectricalApplianceModel {
         parameters = new ArrayList<>();
         List<ElectricalApplianceService> list =
                 (List<ElectricalApplianceService>) context.getBean("peaList", java.util.ArrayList.class);
-        for(ElectricalApplianceService p : list) {
-            this.add(p);
-        }
-        list =
-                (List<ElectricalApplianceService>)
+        list.forEach(this::add);
+        list = (List<ElectricalApplianceService>)
                         context.getBean("seaList", java.util.ArrayList.class);
-        for(ElectricalApplianceService s : list) {
-            this.add(s);
-        }
+        list.forEach(this::add);
+
     }
 
     private void add(ElectricalApplianceService electricalAppliance){
@@ -83,8 +79,9 @@ public class ElectricalApplianceModel {
 
     public String printCollection() {
         StringBuffer buffer = new StringBuffer(GlobalConstants.STRING_BUFFER_SIZE);
-        for (ElectricalApplianceService electricalAppliance : electricalAppliancesArrayList)
-            buffer.append(electricalAppliance.toString());
+        electricalAppliancesArrayList
+                .forEach((electricalAppliance) ->
+                        buffer.append(electricalAppliance.toString()));
         return buffer.toString();
     }
 }
